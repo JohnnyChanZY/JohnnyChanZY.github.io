@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JohnnyChan | 个人博客</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 几何背景 -->
+    <div class="geometric-bg">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <!-- 导航 -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <span class="logo-icon">◇</span>
+                <span class="logo-text">JohnnyChan</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">首页</a></li>
+                <li><a href="#blog" class="nav-link">博客</a></li>
+                <li><a href="#about" class="nav-link">关于</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">Welcome to</div>
+            <h1 class="hero-title">
+                <span class="title-line">我的</span>
+                <span class="title-line accent">几何空间</span>
+            </h1>
+            <p class="hero-desc">
+                探索技术与创意的交汇点<br>
+                这里是代码、设计与思考的记录
+            </p>
+            <div class="hero-btns">
+                <a href="#blog" class="btn btn-primary">
+                    <span>浏览文章</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#about" class="btn btn-secondary">了解更多</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="geo-container">
+                <div class="geo-shape geo-1"></div>
+                <div class="geo-shape geo-2"></div>
+                <div class="geo-shape geo-3"></div>
+                <div class="geo-shape geo-4"></div>
+                <div class="geo-ring"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 博客区域 -->
+    <section class="blog" id="blog">
+        <div class="section-header">
+            <span class="section-tag">BLOG</span>
+            <h2 class="section-title">最新文章</h2>
+            <div class="title-decoration">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card" onclick="window.location.href='#'">
+                <div class="card-image">
+                    <div class="card-pattern pattern-1"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">技术</span>
+                    <h3 class="card-title">大语言模型安全事件告警系统设计与实现</h3>
+                    <p class="card-desc">基于浏览器插件的 LLM 安全事件实时监控与告警方案</p>
+                    <div class="card-meta">
+                        <span class="date">2026-03-11</span>
+                        <span class="read-more">阅读全文 →</span>
+                    </div>
+                </div>
+            </article>
+            <article class="blog-card" onclick="window.location.href='#'">
+                <div class="card-image">
+                    <div class="card-pattern pattern-2"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">设计</span>
+                    <h3 class="card-title">几何美学在网页设计中的应用</h3>
+                    <p class="card-desc">探索现代网页设计中几何图形的艺术表现力</p>
+                    <div class="card-meta">
+                        <span class="date">2026-03-10</span>
+                        <span class="read-more">阅读全文 →</span>
+                    </div>
+                </div>
+            </article>
+            <article class="blog-card" onclick="window.location.href='#'">
+                <div class="card-image">
+                    <div class="card-pattern pattern-3"></div>
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">随笔</span>
+                    <h3 class="card-title">程序员的自我修养</h3>
+                    <p class="card-desc">关于技术成长与职业发展的思考</p>
+                    <div class="card-meta">
+                        <span class="date">2026-03-08</span>
+                        <span class="read-more">阅读全文 →</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 关于区域 -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="section-header">
+                <span class="section-tag">ABOUT</span>
+                <h2 class="section-title">关于我</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>你好！我是 <strong>JohnnyChan</strong>，一名热爱技术与设计的开发者。</p>
+                    <p>这个博客是我记录学习历程、分享技术心得的空间。我对人工智能、Web 开发、用户体验设计等领域充满兴趣。</p>
+                    <p>在这里，你会看到：</p>
+                    <ul class="about-list">
+                        <li>🚀 技术教程与项目分享</li>
+                        <li>🎨 设计思考与美学探索</li>
+                        <li>💡 编程心得与职业思考</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">年经验</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10">0</span>
+                        <span class="stat-label">个项目</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50">0</span>
+                        <span class="stat-label">篇文章</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-visual">
+            <div class="hex-grid">
+                <div class="hex hex-1"></div>
+                <div class="hex hex-2"></div>
+                <div class="hex hex-3"></div>
+                <div class="hex hex-4"></div>
+                <div class="hex hex-5"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系区域 -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <span class="section-tag">CONTACT</span>
+            <h2 class="section-title">联系我</h2>
+            <p class="contact-desc">有问题或建议？欢迎随时联系！</p>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/JohnnyChanZY" class="social-link" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
+            </a>
+            <a href="#" class="social-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+                <span>Twitter</span>
+            </a>
+            <a href="mailto:example@email.com" class="social-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <span>Email</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2026 JohnnyChan. All rights reserved.</p>
+            <p>Built with ❤️ and Geometry</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
