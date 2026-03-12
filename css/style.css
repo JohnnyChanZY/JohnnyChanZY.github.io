@@ -41,6 +41,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none !important;
 }
 
 html {
@@ -1102,13 +1103,10 @@ section {
         transform: rotate(-45deg) translate(5px, -5px);
     }
     
-    /* 光标禁用 */
-    body { 
-        cursor: auto; 
-        -webkit-tap-highlight-color: transparent;
-    }
+    /* 移动端隐藏自定义光标 */
     .cursor, .cursor-dot { display: none; }
-    .btn, .blog-card, .social-link, .nav-link { cursor: pointer; }
+    /* 移动端恢复系统光标 */
+    * { cursor: pointer !important; }
     
     /* 页脚 */
     .footer {
