@@ -53,7 +53,7 @@ body {
     color: var(--text-dark);
     line-height: 1.7;
     overflow-x: hidden;
-    cursor: none;
+    
 }
 
 /* 噪点/颗粒质感叠加层 */
@@ -458,7 +458,7 @@ body {
     font-weight: 600;
     font-size: 1rem;
     transition: var(--transition);
-    cursor: none;
+    
     border: none;
     position: relative;
     overflow: hidden;
@@ -623,7 +623,7 @@ section {
     border-radius: var(--radius-lg);
     overflow: hidden;
     transition: var(--transition);
-    cursor: none;
+    
     border: 1px solid var(--glass-border);
     position: relative;
 }
@@ -880,7 +880,7 @@ section {
     transition: var(--transition);
     border: 1px solid var(--glass-border);
     color: var(--text-dark);
-    cursor: none;
+    
 }
 
 .social-link svg {
