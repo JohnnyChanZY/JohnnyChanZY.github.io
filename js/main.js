@@ -7,7 +7,83 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initCounterAnimation();
     initMenuToggle();
+    initCustomCursor();
 });
+
+// ================================
+// 自定义光标
+// ================================
+function initCustomCursor() {
+    // 创建光标元素
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor';
+    document.body.appendChild(cursor);
+
+    const cursorDot = document.createElement('div');
+    cursorDot.className = 'cursor-dot';
+    document.body.appendChild(cursorDot);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    let dotX = 0, dotY = 0;
+
+    // 鼠标移动
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // 光标平滑跟随
+    function animateCursor() {
+        // 外圈延迟跟随
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
+        
+        // 中心点快速跟随
+        dotX += (mouseX - dotX) * 0.3;
+        dotY += (mouseY - dotY) * 0.3;
+
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        cursor.style.transform = 'translate(-50%, -50%)';
+
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+        cursorDot.style.transform = 'translate(-50%, -50%)';
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // 悬停效果
+    const hoverElements = document.querySelectorAll('a, button, .blog-card, .nav-link, .btn');
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // 拖尾效果
+    let lastTrail = 0;
+    document.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastTrail > 50) {
+            createTrail(e.clientX, e.clientY);
+            lastTrail = now;
+        }
+    });
+}
+
+function createTrail(x, y) {
+    const trail = document.createElement('div');
+    trail.className = 'trail';
+    trail.style.left = x + 'px';
+    trail.style.top = y + 'px';
+    trail.style.width = '15px';
+    trail.style.height = '15px';
+    document.body.appendChild(trail);
+
+    setTimeout(() => trail.remove(), 800);
+}
 
 // 导航栏滚动效果
 function initNavbar() {
