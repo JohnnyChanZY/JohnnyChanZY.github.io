@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JohnnyChan | 个人博客</title>
+    <title>JohnnyChan's blog</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 几何背景 -->
-    <div class="geometric-bg">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
-        <div class="grid-lines"></div>
+    <!-- 背景装饰 -->
+    <div class="bg-decoration">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
     </div>
 
     <!-- 导航 -->
@@ -29,7 +26,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#home" class="nav-link">首页</a></li>
-                <li><a href="#blog" class="nav-link">博客</a></li>
+                <li><a href="#projects" class="nav-link">项目</a></li>
                 <li><a href="#about" class="nav-link">关于</a></li>
                 <li><a href="#contact" class="nav-link">联系</a></li>
             </ul>
@@ -47,15 +44,15 @@
             <div class="hero-badge">Welcome to</div>
             <h1 class="hero-title">
                 <span class="title-line">我的</span>
-                <span class="title-line accent">几何空间</span>
+                <span class="title-line">创意空间</span>
             </h1>
             <p class="hero-desc">
                 探索技术与创意的交汇点<br>
                 这里是代码、设计与思考的记录
             </p>
             <div class="hero-btns">
-                <a href="#blog" class="btn btn-primary">
-                    <span>浏览文章</span>
+                <a href="#projects" class="btn btn-primary">
+                    <span>查看项目</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
@@ -64,97 +61,72 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="geo-container">
-                <div class="geo-shape geo-1"></div>
-                <div class="geo-shape geo-2"></div>
-                <div class="geo-shape geo-3"></div>
-                <div class="geo-shape geo-4"></div>
-                <div class="geo-ring"></div>
+            <div class="geo-shapes">
+                <div class="gs gs-1"></div>
+                <div class="gs gs-2"></div>
+                <div class="gs gs-3"></div>
+                <div class="gs gs-4"></div>
             </div>
         </div>
     </section>
 
-    <!-- 博客区域 -->
-    <section class="blog" id="blog">
+    <!-- 项目区域 -->
+    <section class="projects" id="projects">
         <div class="section-header">
-            <span class="section-tag">BLOG</span>
-            <h2 class="section-title">最新文章</h2>
+            <span class="section-tag">PROJECTS</span>
+            <h2 class="section-title">项目列表</h2>
             <div class="title-decoration">
-                <span></span>
-                <span></span>
                 <span></span>
             </div>
         </div>
-        <div class="blog-grid">
-            <article class="blog-card">
-                <div class="card-image">
-                    <div class="card-pattern pattern-1"></div>
+        <div class="project-grid">
+            <a href="https://github.com/JohnnyChanZY/LLM_security_extension" class="project-card" target="_blank">
+                <div class="project-icon">🛡️</div>
+                <div class="project-content">
+                    <span class="project-tag">安全</span>
+                    <h3 class="project-title">LLM Security Extension</h3>
+                    <p class="project-desc">大语言模型安全事件告警系统 - 基于浏览器插件的 LLM 安全监控与告警方案</p>
+                    <span class="project-link">查看项目 →</span>
                 </div>
-                <div class="card-content">
-                    <span class="card-tag">技术</span>
-                    <h3 class="card-title">大语言模型安全事件告警系统设计与实现</h3>
-                    <p class="card-desc">基于浏览器插件的 LLM 安全事件实时监控与告警方案</p>
-                    <div class="card-meta">
-                        <span class="date">2026-03-11</span>
-                    </div>
+            </a>
+            <a href="https://github.com/JohnnyChanZY/VR-3D-GesturePasswordarios" class="project-card" target="_blank">
+                <div class="project-icon">🔐</div>
+                <div class="project-content">
+                    <span class="project-tag">VR</span>
+                    <h3 class="project-title">VR 3D Gesture Password</h3>
+                    <p class="project-desc">VR 手势密码系统 - 基于 3D 手势的虚拟现实身份认证方案</p>
+                    <span class="project-link">查看项目 →</span>
                 </div>
-            </article>
-            <article class="blog-card">
-                <div class="card-image">
-                    <div class="card-pattern pattern-2"></div>
-                </div>
-                <div class="card-content">
-                    <span class="card-tag">设计</span>
-                    <h3 class="card-title">几何美学在网页设计中的应用</h3>
-                    <p class="card-desc">探索现代网页设计中几何图形的艺术表现力</p>
-                    <div class="card-meta">
-                        <span class="date">2026-03-10</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <div class="card-image">
-                    <div class="card-pattern pattern-3"></div>
-                </div>
-                <div class="card-content">
-                    <span class="card-tag">随笔</span>
-                    <h3 class="card-title">程序员的自我修养</h3>
-                    <p class="card-desc">关于技术成长与职业发展的思考</p>
-                    <div class="card-meta">
-                        <span class="date">2026-03-08</span>
-                    </div>
-                </div>
-            </article>
+            </a>
         </div>
     </section>
 
     <!-- 关于区域 -->
     <section class="about" id="about">
-        <div class="about-content">
-            <div class="section-header">
-                <span class="section-tag">ABOUT</span>
-                <h2 class="section-title">关于我</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>你好！我是 <strong>JohnnyChan</strong>，一名热爱技术与设计的开发者。</p>
-                    <p>这个博客是我记录学习历程、分享技术心得的空间。我对人工智能、Web 开发、用户体验设计等领域充满兴趣。</p>
-                    <p>在这里，你会看到：</p>
-                    <ul class="about-list">
-                        <li>🚀 技术教程与项目分享</li>
-                        <li>🎨 设计思考与美学探索</li>
-                        <li>💡 编程心得与职业思考</li>
-                    </ul>
-                </div>
+        <div class="section-header">
+            <span class="section-tag">ABOUT</span>
+            <h2 class="section-title">关于我</h2>
+            <div class="title-decoration">
+                <span></span>
             </div>
         </div>
-        <div class="about-visual">
-            <div class="hex-grid">
-                <div class="hex hex-1"></div>
-                <div class="hex hex-2"></div>
-                <div class="hex hex-3"></div>
-                <div class="hex hex-4"></div>
-                <div class="hex hex-5"></div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>你好！我是 <strong>JohnnyChan</strong>，一名热爱技术与设计的开发者。</p>
+                <p>这个博客是我记录学习历程、分享技术心得的空间。我对人工智能、Web 开发、用户体验设计等领域充满兴趣。</p>
+                <p>在这里，你会看到：</p>
+                <ul class="about-list">
+                    <li>🚀 技术教程与项目分享</li>
+                    <li>🎨 设计思考与美学探索</li>
+                    <li>💡 编程心得与职业思考</li>
+                </ul>
+            </div>
+            <div class="about-visual">
+                <div class="hex-shapes">
+                    <div class="hs hs-1">JC</div>
+                    <div class="hs hs-2">Dev</div>
+                    <div class="hs hs-3">UX</div>
+                </div>
             </div>
         </div>
     </section>
@@ -193,7 +165,6 @@
     <footer class="footer">
         <div class="footer-content">
             <p>© 2026 JohnnyChan. All rights reserved.</p>
-            <p>Built with ❤️ and Geometry</p>
         </div>
     </footer>
 
