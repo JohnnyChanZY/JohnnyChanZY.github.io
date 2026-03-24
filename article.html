@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章 - JohnnyChan's Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景装饰 -->
+    <div class="bg-decoration">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+    </div>
+
+    <!-- 导航 -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">◇</span>
+                <span class="logo-text">JohnnyChan</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home" class="nav-link">首页</a></li>
+                <li><a href="articles.html" class="nav-link nav-link-active">文章</a></li>
+                <li><a href="index.html#projects" class="nav-link">项目</a></li>
+                <li><a href="index.html#about" class="nav-link">关于</a></li>
+                <li><a href="index.html#contact" class="nav-link">联系</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 文章详情区域 -->
+    <article class="article-page" id="articlePage">
+        <div class="article-page-content">
+            <a href="articles.html" class="article-back">← 返回文章列表</a>
+            <div id="articleContent">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+    </article>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2026 JohnnyChan. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const params = new URLSearchParams(window.location.search);
+            const articleId = params.get('id');
+
+            if (!articleId) {
+                document.getElementById('articleContent').innerHTML = '<div class="error">文章不存在</div>';
+                return;
+            }
+
+            try {
+                // 加载文章索引
+                const indexRes = await fetch('articles/index.json');
+                const articles = await indexRes.json();
+                const article = articles.find(a => a.id === articleId);
+
+                if (!article) {
+                    document.getElementById('articleContent').innerHTML = '<div class="error">文章不存在</div>';
+                    return;
+                }
+
+                // 更新页面标题
+                document.title = `${article.title} - JohnnyChan's Blog`;
+
+                // 加载文章内容
+                const contentRes = await fetch(`articles/${article.file}`);
+                let markdown = await contentRes.text();
+                markdown = markdown.replace(/^---[\s\S]*?---\n*/, '');
+
+                const html = marked.parse(markdown);
+
+                document.getElementById('articleContent').innerHTML = `
+                    <header class="article-header">
+                        <h1 class="article-detail-title">${escapeHtml(article.title)}</h1>
+                        <div class="article-detail-meta">
+                            <span>${formatDate(article.date)}</span>
+                        </div>
+                    </header>
+                    <div class="article-body">${html}</div>
+                `;
+            } catch (error) {
+                console.error('加载文章失败:', error);
+                document.getElementById('articleContent').innerHTML = '<div class="error">文章加载失败</div>';
+            }
+        });
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
