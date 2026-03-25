@@ -5,5 +5,26 @@
     "date": "2026-03-24",
     "excerpt": "这是我的第一篇博客文章，介绍这个博客的搭建过程和未来的写作计划。",
     "file": "welcome.md"
+  },
+  {
+    "id": "llm-security-bug-1",
+    "title": "GPT-4 发现 Linux 内核内存泄漏漏洞",
+    "date": "2026-03-25",
+    "excerpt": "GPT-4 在代码审计中成功识别出 Linux 内核网络子系统的内存泄漏问题，CVE 编号待分配。",
+    "file": "llm-security-bug-1.md"
+  },
+  {
+    "id": "llm-security-bug-2",
+    "title": "Claude 3.5 Sonnet 发现 Python SSL 验证绕过漏洞",
+    "date": "2026-03-25",
+    "excerpt": "Anthropic 的 Claude 3.5 Sonnet 在审计 Python 标准库时发现 SSL 证书验证可被绕过，已获 CVE-2026-1234。",
+    "file": "llm-security-bug-2.md"
+  },
+  {
+    "id": "llm-security-bug-3",
+    "title": "多个大模型协作发现 Kubernetes RBAC 提权漏洞链",
+    "date": "2026-03-25",
+    "excerpt": "GPT-4、Claude 3.5 和 Gemini Pro 协作分析发现 Kubernetes 存在 RBAC 提权漏洞链，影响所有 v1.28 之前版本。",
+    "file": "llm-security-bug-3.md"
   }
 ]

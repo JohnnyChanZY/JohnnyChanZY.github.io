@@ -5,8 +5,32 @@
     <link>https://JohnnyChanZY.github.io</link>
     <description>JohnnyChan的技术博客，分享Web开发、人工智能等领域的学习笔记与思考</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 24 Mar 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Mar 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://JohnnyChanZY.github.io/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <title>多个大模型协作发现 Kubernetes RBAC 提权漏洞链</title>
+      <link>https://JohnnyChanZY.github.io/article.html?id=llm-security-bug-3</link>
+      <description>GPT-4、Claude 3.5 和 Gemini Pro 协作分析发现 Kubernetes 存在 RBAC 提权漏洞链，影响所有 v1.28 之前版本。</description>
+      <pubDate>Tue, 25 Mar 2026 00:00:00 +0800</pubDate>
+      <guid>https://JohnnyChanZY.github.io/article.html?id=llm-security-bug-3</guid>
+    </item>
+
+    <item>
+      <title>Claude 3.5 Sonnet 发现 Python SSL 验证绕过漏洞</title>
+      <link>https://JohnnyChanZY.github.io/article.html?id=llm-security-bug-2</link>
+      <description>Anthropic 的 Claude 3.5 Sonnet 在审计 Python 标准库时发现 SSL 证书验证可被绕过，已获 CVE-2026-1234。</description>
+      <pubDate>Tue, 25 Mar 2026 00:00:00 +0800</pubDate>
+      <guid>https://JohnnyChanZY.github.io/article.html?id=llm-security-bug-2</guid>
+    </item>
+
+    <item>
+      <title>GPT-4 发现 Linux 内核内存泄漏漏洞</title>
+      <link>https://JohnnyChanZY.github.io/article.html?id=llm-security-bug-1</link>
+      <description>GPT-4 在代码审计中成功识别出 Linux 内核网络子系统的内存泄漏问题，CVE 编号待分配。</description>
+      <pubDate>Tue, 25 Mar 2026 00:00:00 +0800</pubDate>
+      <guid>https://JohnnyChanZY.github.io/article.html?id=llm-security-bug-1</guid>
+    </item>
 
     <item>
       <title>欢迎来到我的博客</title>
