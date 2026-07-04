@@ -413,34 +413,63 @@
             .hero h1 { font-size: 1.6em; }
             .hero .subtitle { font-size: 1em; }
             .hero .dates { font-size: 0.85em; padding: 6px 16px; }
-            .hero { padding: 40px 16px 36px; }
-            .container { padding: 0 12px; }
-            .section-title { font-size: 1.2em; margin: 28px 0 14px; }
-            .card { padding: 16px; border-radius: 12px; }
-            .day-card { flex-direction: column; gap: 12px; }
-            .day-num { flex-direction: row; width: 100%; height: auto; padding: 10px 16px; border-radius: 10px; gap: 8px; }
-            .accom-card { flex-direction: column; gap: 12px; }
-            .flight-card { flex-direction: column; text-align: center; gap: 10px; padding: 14px; }
-            .flight-time { text-align: center; }
-            .flight-info .flight-no { font-size: 1em; }
-            .flight-time .time { font-size: 1em; }
-            .split-grid { grid-template-columns: 1fr; }
-            .day-tabs { gap: 5px; }
-            .day-tab { padding: 7px 10px; font-size: 0.78em; border-radius: 8px; }
-            .day-tab .tab-date { font-size: 0.75em; }
-            .timeline { padding-left: 28px; }
-            .tl-dot { left: -28px; width: 20px; height: 20px; font-size: 10px; }
-            .tl-content { padding: 12px 14px; }
-            .tl-content h4 { font-size: 0.92em; }
-            .tl-content .tl-desc { font-size: 0.85em; }
-            .info-grid { grid-template-columns: 1fr; }
-            .quick-links { gap: 6px; }
-            .quick-link { padding: 8px 12px; font-size: 0.8em; }
-            .pw-box .pw-value { font-size: 1.2em; }
-            .steps li { padding: 8px 10px; font-size: 0.85em; }
-            .note { padding: 10px 12px; font-size: 0.85em; }
-            .action-btns { gap: 6px; }
-            .action-btn { padding: 5px 10px; font-size: 0.76em; }
+            .hero { padding: 32px 12px 28px; }
+            .container { padding: 0 8px; }
+            .section-title { font-size: 1.1em; margin: 20px 0 10px; }
+            .card { padding: 12px; border-radius: 10px; margin-bottom: 10px; }
+
+            /* Flight card - compact horizontal */
+            .flight-card {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                text-align: left;
+                gap: 10px;
+                padding: 10px 12px;
+                margin-bottom: 8px;
+            }
+            .flight-icon { font-size: 1.4em; min-width: 32px; }
+            .flight-info .flight-no { font-size: 0.92em; }
+            .flight-info .flight-route { font-size: 0.78em; }
+            .flight-info .flight-people { font-size: 0.72em; }
+            .flight-time { text-align: right; min-width: 90px; }
+            .flight-time .time { font-size: 0.82em; }
+            .flight-time .airport { font-size: 0.7em; }
+
+            /* Accommodation - small icon */
+            .accom-card { flex-direction: row; gap: 10px; align-items: flex-start; }
+            .accom-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+                font-size: 1.1em;
+            }
+            .accom-body h3 { font-size: 0.95em; }
+            .accom-body .accom-loc { font-size: 0.8em; margin-bottom: 8px; }
+
+            /* Timeline */
+            .day-card { flex-direction: column; gap: 10px; }
+            .day-num { flex-direction: row; width: 100%; height: auto; padding: 8px 12px; border-radius: 8px; gap: 6px; font-size: 0.9em; }
+            .day-tabs { gap: 4px; }
+            .day-tab { padding: 6px 8px; font-size: 0.72em; border-radius: 6px; }
+            .day-tab .tab-date { font-size: 0.7em; }
+            .timeline { padding-left: 24px; }
+            .tl-dot { left: -24px; width: 18px; height: 18px; font-size: 9px; }
+            .tl-content { padding: 10px 12px; }
+            .tl-content h4 { font-size: 0.88em; }
+            .tl-content .tl-desc { font-size: 0.8em; }
+            .tl-content .tl-time { font-size: 0.72em; }
+
+            /* Info & buttons */
+            .info-grid { grid-template-columns: 1fr; gap: 6px; }
+            .info-chip { padding: 8px 10px; font-size: 0.82em; }
+            .quick-links { gap: 5px; }
+            .quick-link { padding: 7px 10px; font-size: 0.75em; }
+            .pw-box { padding: 12px; }
+            .pw-box .pw-value { font-size: 1.1em; }
+            .steps li { padding: 7px 10px; font-size: 0.8em; }
+            .note { padding: 8px 10px; font-size: 0.8em; }
+            .action-btns { gap: 5px; }
+            .action-btn { padding: 4px 8px; font-size: 0.72em; }
         }
     </style>
 </head>
