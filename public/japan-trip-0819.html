@@ -186,24 +186,6 @@
         }
         .accom-body .accom-detail strong { color: var(--text); }
 
-        /* Map Button */
-        .map-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--sky);
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 0.9em;
-            font-weight: 600;
-            transition: all 0.2s;
-            margin-top: 12px;
-        }
-        .map-btn:hover { background: #0769b5; transform: translateY(-1px); }
-        .map-btn svg { width: 16px; height: 16px; fill: white; }
-
         /* Info Grid */
         .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
@@ -400,16 +382,65 @@
             font-weight: 500;
         }
 
+        /* Action Buttons */
+        .action-btns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #f8f9fa;
+            color: var(--text);
+            font-size: 0.82em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .action-btn:hover { background: #e9ecef; transform: translateY(-1px); }
+        .action-btn.copy-btn.copied { background: var(--green); color: white; border-color: var(--green); }
+        .action-btn.map-link { background: var(--sky); color: white; border-color: var(--sky); }
+        .action-btn.map-link:hover { background: #0769b5; }
+
         @media (max-width: 600px) {
-            .hero h1 { font-size: 2em; }
+            .hero h1 { font-size: 1.6em; }
+            .hero .subtitle { font-size: 1em; }
+            .hero .dates { font-size: 0.85em; padding: 6px 16px; }
+            .hero { padding: 40px 16px 36px; }
+            .container { padding: 0 12px; }
+            .section-title { font-size: 1.2em; margin: 28px 0 14px; }
+            .card { padding: 16px; border-radius: 12px; }
             .day-card { flex-direction: column; gap: 12px; }
             .day-num { flex-direction: row; width: 100%; height: auto; padding: 10px 16px; border-radius: 10px; gap: 8px; }
             .accom-card { flex-direction: column; gap: 12px; }
-            .flight-card { flex-direction: column; text-align: center; gap: 10px; }
+            .flight-card { flex-direction: column; text-align: center; gap: 10px; padding: 14px; }
             .flight-time { text-align: center; }
+            .flight-info .flight-no { font-size: 1em; }
+            .flight-time .time { font-size: 1em; }
             .split-grid { grid-template-columns: 1fr; }
-            .day-tabs { gap: 6px; }
-            .day-tab { padding: 8px 12px; font-size: 0.85em; }
+            .day-tabs { gap: 5px; }
+            .day-tab { padding: 7px 10px; font-size: 0.78em; border-radius: 8px; }
+            .day-tab .tab-date { font-size: 0.75em; }
+            .timeline { padding-left: 28px; }
+            .tl-dot { left: -28px; width: 20px; height: 20px; font-size: 10px; }
+            .tl-content { padding: 12px 14px; }
+            .tl-content h4 { font-size: 0.92em; }
+            .tl-content .tl-desc { font-size: 0.85em; }
+            .info-grid { grid-template-columns: 1fr; }
+            .quick-links { gap: 6px; }
+            .quick-link { padding: 8px 12px; font-size: 0.8em; }
+            .pw-box .pw-value { font-size: 1.2em; }
+            .steps li { padding: 8px 10px; font-size: 0.85em; }
+            .note { padding: 10px 12px; font-size: 0.85em; }
+            .action-btns { gap: 6px; }
+            .action-btn { padding: 5px 10px; font-size: 0.76em; }
         }
     </style>
 </head>
@@ -420,7 +451,7 @@
     <h1>🇯🇵 日本旅行</h1>
     <div class="subtitle">京都 · 宇治 · 奈良 · 大阪 · 东京</div>
     <div class="dates">📅 2026年8月16日 — 8月25日</div>
-    <div class="people">👥 一行五人 · 爸爸 · 妈妈 · 妹妹 · 我 · 朋友</div>
+    <div class="people">👥 一行五人 · 爸爸 · 妈妈 · 妹妹 · 我 · 超哥</div>
 </div>
 
 <div class="container">
@@ -459,7 +490,7 @@
         <div class="flight-info">
             <div class="flight-no">NH 026</div>
             <div class="flight-route">大阪伊丹机场 → 东京羽田机场</div>
-            <div class="flight-people">👥 我 · 朋友</div>
+            <div class="flight-people">👥 我 · 超哥</div>
         </div>
         <div class="flight-time">
             <div class="time">8月22日 12:50 → 14:10</div>
@@ -472,7 +503,7 @@
         <div class="flight-info">
             <div class="flight-no">UO 849</div>
             <div class="flight-route">东京成田机场 → 香港国际机场</div>
-            <div class="flight-people">👥 我 · 朋友</div>
+            <div class="flight-people">👥 我 · 超哥</div>
         </div>
         <div class="flight-time">
             <div class="time">8月25日 15:45 → 19:40</div>
@@ -524,8 +555,11 @@
                     <div class="tl-dot transport">🚃</div>
                     <div class="tl-content">
                         <div class="tl-time">约 20:00 — 21:00</div>
-                        <h4>🚃 前往京都</h4>
-                        <div class="tl-desc">从关西国际机场乘坐交通前往京都市区</div>
+                        <h4>🚃 HARUKA 52 特急 京都线</h4>
+                        <div class="tl-desc">关西国际机场 → 京都站 · 车程约 1 小时</div>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '京都站')">📋 复制目的地</button>
+                        </div>
                     </div>
                 </div>
                 <div class="tl-item">
@@ -536,6 +570,10 @@
                         <div class="tl-desc">
                             京都市南区东九条东岩本町6-3（邮编 601-8006）<br>
                             确认码：HMY22MNMPD · Airbnb · 5位客人
+                        </div>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=京都市南区東九条東岩本町6-3+601-8006" target="_blank" class="action-btn map-link">📍 Google Maps</a>
+                            <button class="action-btn copy-btn" onclick="copyText(this, '京都市南区东九条东岩本町6-3 601-8006')">📋 复制地址</button>
                         </div>
                     </div>
                 </div>
@@ -551,23 +589,36 @@
                 <div class="tl-item">
                     <div class="tl-dot transport">🚃</div>
                     <div class="tl-content">
-                        <div class="tl-time">上午</div>
-                        <h4>🚃 从京都出发前往宇治</h4>
+                        <div class="tl-time">早上</div>
+                        <h4>🚃 奈良线 普通 → 宇治站</h4>
+                        <div class="tl-desc">从奈良乘坐奈良线普通列车前往宇治站 · 车程约 45 分钟</div>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '宇治站')">📋 复制目的地</button>
+                        </div>
                     </div>
                 </div>
                 <div class="tl-item">
-                    <div class="tl-dot sight">📸</div>
+                    <div class="tl-dot sight">⛩️</div>
                     <div class="tl-content">
-                        <div class="tl-time">上午 — 下午</div>
-                        <h4>📸 游览宇治景点</h4>
-                        <div class="tl-desc">平等院凤凰堂、宇治川、源氏物语博物馆</div>
+                        <div class="tl-time">上午</div>
+                        <h4>⛩️ 宇治上神社</h4>
+                        <div class="tl-desc">世界文化遗产，日本最古老的神社建筑之一</div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot food">🍵</div>
+                    <div class="tl-content">
+                        <div class="tl-time">午餐</div>
+                        <h4>🍵 伊藤久右衛門 平等院店</h4>
+                        <div class="tl-desc">宇治抹茶名店，品尝正宗抹茶甜品和抹茶荞麦面</div>
                     </div>
                 </div>
                 <div class="tl-item">
                     <div class="tl-dot food">🍵</div>
                     <div class="tl-content">
                         <div class="tl-time">下午</div>
-                        <h4>🍵 品尝正宗宇治抹茶</h4>
+                        <h4>🍵 中村藤吉本店</h4>
+                        <div class="tl-desc">创业于1859年的宇治抹茶老字号，抹茶圣代和抹茶果冻必尝</div>
                     </div>
                 </div>
                 <div class="tl-item">
@@ -591,8 +642,8 @@
                     <div class="tl-dot sight">📸</div>
                     <div class="tl-content">
                         <div class="tl-time">上午</div>
-                        <h4>📸 京都游玩</h4>
-                        <div class="tl-desc">清水寺、伏见稻荷大社等经典景点</div>
+                        <h4>📸 清水寺 · 二年坂三年坂</h4>
+                        <div class="tl-desc">京都最具代表性的历史街区，清水舞台俯瞰京都全景，漫步二年坂三年坂感受古都风情</div>
                     </div>
                 </div>
                 <div class="tl-item">
@@ -600,6 +651,9 @@
                     <div class="tl-content">
                         <div class="tl-time">下午</div>
                         <h4>🚃 前往奈良</h4>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '近铁奈良站')">📋 复制目的地</button>
+                        </div>
                     </div>
                 </div>
                 <div class="tl-item">
@@ -611,6 +665,10 @@
                             奈良县奈良市柴辺町42-20（灰墙）<br>
                             Shika HOUSE 2 / Kaji HOUSE 2 · Airbnb<br>
                             近铁/JR奈良站步行8分钟 · 2张单人床 + 3张双人床
+                        </div>
+                        <div class="action-btns">
+                            <a href="https://maps.app.goo.gl/LkEP1cyQ57thaubH6" target="_blank" class="action-btn map-link">📍 Google Maps</a>
+                            <button class="action-btn copy-btn" onclick="copyText(this, '奈良县奈良市柴辺町42-20')">📋 复制地址</button>
                         </div>
                     </div>
                 </div>
@@ -655,6 +713,10 @@
                             确认号：HMBMZYCKWH · 黑门市场附近<br>
                             自助入住密码：52076403
                         </div>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=542-0072+大阪市中央区高津3-12-17" target="_blank" class="action-btn map-link">📍 Google Maps</a>
+                            <button class="action-btn copy-btn" onclick="copyText(this, '大阪市中央区高津3-12-17 542-0072')">📋 复制地址</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -671,6 +733,9 @@
                     <div class="tl-content">
                         <div class="tl-time">上午</div>
                         <h4>🚃 从大阪民宿出发前往 USJ</h4>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '日本环球影城')">📋 复制目的地</button>
+                        </div>
                     </div>
                 </div>
                 <div class="tl-item">
@@ -688,6 +753,9 @@
                     <div class="tl-content">
                         <div class="tl-time">晚上</div>
                         <h4>🚃 返回大阪民宿</h4>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '大阪市中央区高津3-12-17 542-0072')">📋 复制地址</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -733,6 +801,9 @@
                     <div class="tl-content">
                         <div class="tl-time">晚上</div>
                         <h4>🚃 返回大阪民宿</h4>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '大阪市中央区高津3-12-17 542-0072')">📋 复制地址</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -767,13 +838,13 @@
                     <div class="tl-dot flight">✈️</div>
                     <div class="tl-content">
                         <div class="tl-time">12:50 — 14:10</div>
-                        <h4>🧑‍🤝‍🧑 我 · 朋友 前往东京</h4>
+                        <h4>🧑‍🤝‍🧑 我 · 超哥 前往东京</h4>
                         <div class="flight-card" style="margin-top: 8px;">
                             <div class="flight-icon">🛫</div>
                             <div class="flight-info">
                                 <div class="flight-no">NH 026</div>
                                 <div class="flight-route">大阪伊丹机场 → 东京羽田机场</div>
-                                <div class="flight-people">🧑‍🤝‍🧑 我 · 朋友</div>
+                                <div class="flight-people">🧑‍🤝‍🧑 我 · 超哥</div>
                             </div>
                             <div class="flight-time">
                                 <div class="time">12:50 → 14:10</div>
@@ -788,6 +859,9 @@
                         <div class="tl-time">下午</div>
                         <h4>🚃 前往东京住处</h4>
                         <div class="tl-desc">安顿住宿，下午/晚上自由活动</div>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '东京羽田机场')">📋 复制目的地</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -850,6 +924,9 @@
                         <div class="tl-time">凌晨出发（约 02:00）</div>
                         <h4>🚌 新宿高速巴士 → 富士山五合目</h4>
                         <div class="tl-desc">车程约 2.5 小时，建议凌晨出发争取山顶看日出 🌅</div>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '富士山五合目')">📋 复制目的地</button>
+                        </div>
                     </div>
                 </div>
                 <div class="tl-item">
@@ -876,6 +953,9 @@
                     <div class="tl-content">
                         <div class="tl-time">傍晚</div>
                         <h4>🚌 返回东京</h4>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '新宿高速巴士总站')">📋 复制目的地</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -899,6 +979,9 @@
                     <div class="tl-content">
                         <div class="tl-time">中午</div>
                         <h4>🚃 前往东京成田机场</h4>
+                        <div class="action-btns">
+                            <button class="action-btn copy-btn" onclick="copyText(this, '东京成田机场')">📋 复制目的地</button>
+                        </div>
                     </div>
                 </div>
                 <div class="tl-item">
@@ -911,7 +994,7 @@
                             <div class="flight-info">
                                 <div class="flight-no">UO 849</div>
                                 <div class="flight-route">东京成田机场 → 香港国际机场</div>
-                                <div class="flight-people">🧑‍🤝‍🧑 我 · 朋友</div>
+                                <div class="flight-people">🧑‍🤝‍🧑 我 · 超哥</div>
                             </div>
                             <div class="flight-time">
                                 <div class="time">15:45 → 19:40</div>
@@ -939,30 +1022,22 @@
         <div class="accom-card">
             <div class="accom-icon kyoto">🏯</div>
             <div class="accom-body">
-                <h3>京都民宿 — Rental House near Kyoto Station</h3>
-                <div class="accom-loc">📍 京都市南区东九条东岩本町6-3 · 8月16日-18日（2晚）</div>
+                <h3>京都民宿</h3>
+                <div class="accom-loc">📍 京都市南区东九条东岩本町6-3（邮编 601-8006）</div>
                 <div class="info-grid">
                     <div class="info-chip">
-                        <div class="chip-label">确认码</div>
-                        <div class="chip-value">HMY22MNMPD</div>
+                        <div class="chip-label">入住</div>
+                        <div class="chip-value">8月16日 周日 12:00</div>
                     </div>
                     <div class="info-chip">
-                        <div class="chip-label">入住人数</div>
-                        <div class="chip-value">5位客人</div>
-                    </div>
-                    <div class="info-chip">
-                        <div class="chip-label">邮编</div>
-                        <div class="chip-value">601-8006</div>
-                    </div>
-                    <div class="info-chip">
-                        <div class="chip-label">平台</div>
-                        <div class="chip-value">Airbnb</div>
+                        <div class="chip-label">退房</div>
+                        <div class="chip-value">8月18日 周二 11:00</div>
                     </div>
                 </div>
-                <a href="https://www.google.com/maps/search/?api=1&query=京都市南区東九条東岩本町6-3+601-8006" target="_blank" class="map-btn">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    在 Google Maps 中查看
-                </a>
+                <div class="action-btns">
+                    <a href="https://www.google.com/maps/search/?api=1&query=京都市南区東九条東岩本町6-3+601-8006" target="_blank" class="action-btn map-link">📍 Google Maps</a>
+                    <button class="action-btn copy-btn" onclick="copyText(this, '京都市南区东九条东岩本町6-3 601-8006')">📋 复制地址</button>
+                </div>
             </div>
         </div>
     </div>
@@ -972,33 +1047,21 @@
         <div class="accom-card">
             <div class="accom-icon nara">🦌</div>
             <div class="accom-body">
-                <h3>奈良民宿 — Shika HOUSE 2 / Kaji HOUSE 2</h3>
-                <div class="accom-loc">📍 奈良县奈良市柴辺町42-20（灰墙）· 8月18日-19日（1晚）</div>
+                <h3>奈良民宿</h3>
+                <div class="accom-loc">📍 奈良县奈良市柴辺町42-20</div>
                 <div class="info-grid">
                     <div class="info-chip">
-                        <div class="chip-label">最近车站</div>
-                        <div class="chip-value">近铁/JR奈良站 步行8分钟</div>
+                        <div class="chip-label">入住</div>
+                        <div class="chip-value">8月18日 周二 15:00</div>
                     </div>
                     <div class="info-chip">
-                        <div class="chip-label">入住时间</div>
-                        <div class="chip-value">15:00</div>
-                    </div>
-                    <div class="info-chip">
-                        <div class="chip-label">床型</div>
-                        <div class="chip-value">2张单人床 + 3张双人床</div>
-                    </div>
-                    <div class="info-chip">
-                        <div class="chip-label">平台</div>
-                        <div class="chip-value">Airbnb</div>
+                        <div class="chip-label">退房</div>
+                        <div class="chip-value">8月19日 周三 11:00</div>
                     </div>
                 </div>
-                <a href="https://maps.app.goo.gl/LkEP1cyQ57thaubH6" target="_blank" class="map-btn">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    在 Google Maps 中查看
-                </a>
-                <div class="note">
-                    ⚠️ 入口处有监控摄像头，用于核实身份证件和房客人数。如房客人数变化请提前更改。<br>
-                    🚗 可停轻型车辆（4.4m × 2.2m），多辆车请使用附近投币停车场。
+                <div class="action-btns">
+                    <a href="https://maps.app.goo.gl/LkEP1cyQ57thaubH6" target="_blank" class="action-btn map-link">📍 Google Maps</a>
+                    <button class="action-btn copy-btn" onclick="copyText(this, '奈良县奈良市柴辺町42-20')">📋 复制地址</button>
                 </div>
             </div>
         </div>
@@ -1009,49 +1072,21 @@
         <div class="accom-card">
             <div class="accom-icon osaka">🏙️</div>
             <div class="accom-body">
-                <h3>大阪民宿 — ASOBO大阪黑门 黑門1号</h3>
-                <div class="accom-loc">📍 大阪市中央区高津3-12-17（542-0072）· 8月19日-22日（3晚）</div>
+                <h3>大阪民宿</h3>
+                <div class="accom-loc">📍 大阪市中央区高津3-12-17（542-0072）</div>
                 <div class="info-grid">
                     <div class="info-chip">
-                        <div class="chip-label">确认号</div>
-                        <div class="chip-value">HMBMZYCKWH</div>
+                        <div class="chip-label">入住</div>
+                        <div class="chip-value">8月19日 周三 16:00</div>
                     </div>
                     <div class="info-chip">
-                        <div class="chip-label">附近地标</div>
-                        <div class="chip-value">黑门市场附近</div>
-                    </div>
-                    <div class="info-chip">
-                        <div class="chip-label">联系邮箱</div>
-                        <div class="chip-value">2573048892@qq.com</div>
-                    </div>
-                    <div class="info-chip">
-                        <div class="chip-label">联系电话</div>
-                        <div class="chip-value">+81-06-6649-3888</div>
+                        <div class="chip-label">退房</div>
+                        <div class="chip-value">8月22日 周六 10:00</div>
                     </div>
                 </div>
-
-                <a href="https://www.google.com/maps/search/?api=1&query=542-0072+大阪市中央区高津3-12-17" target="_blank" class="map-btn">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                    在 Google Maps 中查看
-                </a>
-
-                <h4 style="margin-top: 18px; margin-bottom: 10px; font-size: 1em;">🔑 自助入住指引</h4>
-                <ul class="steps">
-                    <li><span class="n">1</span><span>在浏览器中打开自助入住链接：<br><a href="https://www.smartorder.jp/selfcheckin/" target="_blank" style="color: var(--sky);">https://www.smartorder.jp/selfcheckin/</a></span></li>
-                    <li><span class="n">2</span><span>输入自助入住密码或确认号</span></li>
-                    <li><span class="n">3</span><span>填写所有房客的必填信息</span></li>
-                    <li><span class="n">4</span><span>提交后前往「入住说明」页面，获取房间出入详情</span></li>
-                </ul>
-
-                <div class="pw-box">
-                    <div class="pw-label">🔑 自助入住密码</div>
-                    <div class="pw-value">52076403</div>
-                    <div style="color: #856404; font-size: 0.9em; margin-top: 4px;">确认号：HMBMZYCKWH</div>
-                </div>
-
-                <div class="note">
-                    ⚠️ 必须提交所有房客的自助入住表格后，才能查看「入住说明」页面获取房间出入详情。<br>
-                    💡 可提前上传一张随意照片满足自拍要求，抵达时可拍摄团体照片替换。
+                <div class="action-btns">
+                    <a href="https://www.google.com/maps/search/?api=1&query=542-0072+大阪市中央区高津3-12-17" target="_blank" class="action-btn map-link">📍 Google Maps</a>
+                    <button class="action-btn copy-btn" onclick="copyText(this, '大阪市中央区高津3-12-17 542-0072')">📋 复制地址</button>
                 </div>
             </div>
         </div>
@@ -1083,16 +1118,42 @@
     document.querySelectorAll('.day-tab').forEach(tab => {
         tab.addEventListener('click', () => {
             const day = tab.dataset.day;
-
-            // Update active tab
             document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-
-            // Update active panel
             document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
             document.querySelector(`.day-panel[data-day="${day}"]`).classList.add('active');
         });
     });
+
+    // Copy to clipboard
+    function copyText(btn, text) {
+        navigator.clipboard.writeText(text).then(() => {
+            const orig = btn.innerHTML;
+            btn.innerHTML = '✅ 已复制';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerHTML = orig;
+                btn.classList.remove('copied');
+            }, 1500);
+        }).catch(() => {
+            // Fallback for older browsers
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            const orig = btn.innerHTML;
+            btn.innerHTML = '✅ 已复制';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerHTML = orig;
+                btn.classList.remove('copied');
+            }, 1500);
+        });
+    }
 </script>
 
 </body>
