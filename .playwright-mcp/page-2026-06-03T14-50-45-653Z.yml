@@ -1,0 +1,124 @@
+- generic [ref=e2]:
+  - generic:
+    - img
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - 'link "{ Johnny }" [ref=e5] [cursor=pointer]':
+        - /url: "#"
+        - generic [ref=e6]: "{"
+        - generic [ref=e7]: Johnny
+        - generic [ref=e8]: "}"
+      - list [ref=e9]:
+        - listitem [ref=e10]:
+          - link "首页" [ref=e11] [cursor=pointer]:
+            - /url: "#hero"
+        - listitem [ref=e12]:
+          - link "关于" [ref=e13] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e14]:
+          - link "博客" [ref=e15] [cursor=pointer]:
+            - /url: "#blog"
+        - listitem [ref=e16]:
+          - link "联系" [ref=e17] [cursor=pointer]:
+            - /url: "#contact"
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - img [ref=e20]
+      - heading "Hi, I'm Johnny A Developer & Creator" [level=1] [ref=e37]:
+        - generic [ref=e38]: Hi, I'm Johnny
+        - generic [ref=e39]: A Developer &
+        - generic [ref=e40]: Creator
+    - generic [ref=e41]:
+      - generic [ref=e43]: Welcome to my space
+      - paragraph [ref=e44]: 热爱代码与设计，用技术创造有趣的项目。这里记录我的思考、学习和探索。
+      - generic [ref=e45]:
+        - link "阅读博客" [ref=e46] [cursor=pointer]:
+          - /url: "#blog"
+        - link "了解更多" [ref=e47] [cursor=pointer]:
+          - /url: "#about"
+    - img [ref=e49]
+  - generic [ref=e59]:
+    - img
+    - img
+    - img
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]: About Me
+        - heading "关于我" [level=2] [ref=e63]
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - img [ref=e67]
+          - heading "开发者" [level=3] [ref=e69]
+          - paragraph [ref=e70]: 专注于前端开发与全栈技术，热爱用代码构建优雅的解决方案。
+        - generic [ref=e71]:
+          - img [ref=e73]
+          - heading "设计师" [level=3] [ref=e75]
+          - paragraph [ref=e76]: 追求简洁与美感，相信好的设计能让技术变得更有温度。
+        - generic [ref=e77]:
+          - img [ref=e79]
+          - heading "探索者" [level=3] [ref=e81]
+          - paragraph [ref=e82]: 对新技术充满好奇，持续学习，勇于尝试不同的可能性。
+  - generic [ref=e83]:
+    - img
+    - img
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]: Blog
+        - heading "最新文章" [level=2] [ref=e87]
+      - generic [ref=e88]:
+        - article [ref=e89]:
+          - generic [ref=e90]:
+            - generic [ref=e91]: 前端
+            - generic [ref=e92]: 2026.05.28
+          - heading "用 GSAP 打造丝滑的网页动画" [level=3] [ref=e93]
+          - paragraph [ref=e94]: 探索 GSAP 动画库的核心功能，从基础 tween 到复杂的 timeline 编排，让你的网页动起来。
+          - link "阅读全文" [ref=e95] [cursor=pointer]:
+            - /url: "#"
+            - text: 阅读全文
+            - img [ref=e96]
+        - article [ref=e98]:
+          - generic [ref=e99]:
+            - generic [ref=e100]: 设计
+            - generic [ref=e101]: 2026.05.15
+          - heading "几何美学在 UI 设计中的应用" [level=3] [ref=e102]
+          - paragraph [ref=e103]: 如何运用几何线条和形状创造现代感十足的用户界面，从理论到实践的完整指南。
+          - link "阅读全文" [ref=e104] [cursor=pointer]:
+            - /url: "#"
+            - text: 阅读全文
+            - img [ref=e105]
+        - article [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]: 思考
+            - generic [ref=e110]: 2026.05.02
+          - heading "代码之外：程序员的设计思维" [level=3] [ref=e111]
+          - paragraph [ref=e112]: 为什么程序员应该学习设计思维？从用户体验出发，重新审视我们构建的产品。
+          - link "阅读全文" [ref=e113] [cursor=pointer]:
+            - /url: "#"
+            - text: 阅读全文
+            - img [ref=e114]
+  - generic [ref=e116]:
+    - img
+    - img
+    - generic [ref=e117]:
+      - generic [ref=e118]:
+        - generic [ref=e119]: Contact
+        - heading "联系我" [level=2] [ref=e120]
+      - generic [ref=e121]:
+        - paragraph [ref=e122]: 有兴趣合作或只是想打个招呼？随时联系我！
+        - generic [ref=e123]:
+          - link "johnny@example.com" [ref=e124] [cursor=pointer]:
+            - /url: mailto:johnny@example.com
+            - img [ref=e125]
+            - generic [ref=e128]: johnny@example.com
+          - link "GitHub" [ref=e129] [cursor=pointer]:
+            - /url: https://github.com/johnny
+            - img [ref=e130]
+            - generic [ref=e132]: GitHub
+          - link "Twitter" [ref=e133] [cursor=pointer]:
+            - /url: https://twitter.com/johnny
+            - img [ref=e134]
+            - generic [ref=e136]: Twitter
+  - contentinfo [ref=e137]:
+    - generic [ref=e139]:
+      - paragraph [ref=e140]: "{ Johnny's Blog } — Built with passion & code"
+      - paragraph [ref=e141]: © 2026 Johnny. All rights reserved.

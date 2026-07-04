@@ -1,0 +1,159 @@
+- generic [ref=e2]:
+  - generic:
+    - img
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - 'link "{ Johnny }" [ref=e5] [cursor=pointer]':
+        - /url: "#"
+        - generic [ref=e6]: "{"
+        - generic [ref=e7]: Johnny
+        - generic [ref=e8]: "}"
+      - list [ref=e9]:
+        - listitem [ref=e10]:
+          - link "首页" [ref=e11] [cursor=pointer]:
+            - /url: "#hero"
+        - listitem [ref=e12]:
+          - link "关于" [ref=e13] [cursor=pointer]:
+            - /url: "#about"
+        - listitem [ref=e14]:
+          - link "项目" [ref=e15] [cursor=pointer]:
+            - /url: "#projects"
+        - listitem [ref=e16]:
+          - link "联系" [ref=e17] [cursor=pointer]:
+            - /url: "#contact"
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - img [ref=e20]
+      - heading "Hi, I'm Johnny A Developer & Creator" [level=1] [ref=e37]:
+        - generic [ref=e38]: Hi, I'm Johnny
+        - generic [ref=e39]: A Developer &
+        - generic [ref=e40]: Creator
+    - generic [ref=e41]:
+      - generic [ref=e43]: Welcome to my space
+      - paragraph [ref=e44]: 热爱代码与设计，用技术创造有趣的项目。这里记录我的思考、学习和探索。
+      - generic [ref=e45]:
+        - link "查看项目" [ref=e46] [cursor=pointer]:
+          - /url: "#projects"
+        - link "了解更多" [ref=e47] [cursor=pointer]:
+          - /url: "#about"
+    - img [ref=e49]
+  - generic [ref=e59]:
+    - img
+    - img
+    - img
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]: About Me
+        - heading "关于我" [level=2] [ref=e63]
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - img [ref=e67]
+          - heading "开发者" [level=3] [ref=e69]
+          - paragraph [ref=e70]: 专注于前端开发与全栈技术，热爱用代码构建优雅的解决方案。
+        - generic [ref=e71]:
+          - img [ref=e73]
+          - heading "设计师" [level=3] [ref=e75]
+          - paragraph [ref=e76]: 追求简洁与美感，相信好的设计能让技术变得更有温度。
+        - generic [ref=e77]:
+          - img [ref=e79]
+          - heading "探索者" [level=3] [ref=e81]
+          - paragraph [ref=e82]: 对新技术充满好奇，持续学习，勇于尝试不同的可能性。
+  - generic [ref=e83]:
+    - img
+    - img
+    - generic [ref=e85]:
+      - generic [ref=e86]: Projects
+      - heading "个人项目" [level=2] [ref=e87]
+    - generic [ref=e90]:
+      - article [ref=e91] [cursor=pointer]:
+        - generic [ref=e93]:
+          - generic [ref=e94]:
+            - img [ref=e95]
+            - link [ref=e97]:
+              - /url: https://github.com/JohnnyChanZY/llm-security-extension
+              - img [ref=e98]
+          - heading "LLM Security Extension" [level=3] [ref=e100]
+          - paragraph [ref=e101]: LLM 安全事件推送系统 — 多源数据聚合与智能推送，实时监控 LLM 安全动态。
+          - generic [ref=e102]:
+            - generic [ref=e103]: Python
+            - generic [ref=e104]: Vue3
+            - generic [ref=e105]: FastAPI
+            - generic [ref=e106]: MySQL
+            - generic [ref=e107]: Chrome Extension
+      - article [ref=e108] [cursor=pointer]:
+        - generic [ref=e110]:
+          - generic [ref=e111]:
+            - img [ref=e112]
+            - link [ref=e114]:
+              - /url: https://github.com/JohnnyChanZY/agent-porter
+              - img [ref=e115]
+          - heading "Agent Porter" [level=3] [ref=e117]
+          - paragraph [ref=e118]: AI Agent 配置迁移工具 — 跨平台导出、蒸馏和导入 Agent 配置。
+          - generic [ref=e119]:
+            - generic [ref=e120]: Python
+            - generic [ref=e121]: CLI
+      - article [ref=e122] [cursor=pointer]:
+        - generic [ref=e124]:
+          - generic [ref=e125]:
+            - img [ref=e126]
+            - link [ref=e128]:
+              - /url: https://github.com/JohnnyChanZY/aicoding-keyboard
+              - img [ref=e129]
+          - heading "ESP32 Keybrick" [level=3] [ref=e131]
+          - paragraph [ref=e132]: 多功能 ESP32 自定义键盘 — 5 个可编程按键，打造个性化输入设备。
+          - generic [ref=e133]:
+            - generic [ref=e134]: C
+            - generic [ref=e135]: ESP32
+            - generic [ref=e136]: Embedded
+      - article [ref=e137] [cursor=pointer]:
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - img [ref=e141]
+            - link [ref=e143]:
+              - /url: https://github.com/JohnnyChanZY/red-seal-extractor
+              - img [ref=e144]
+          - heading "Red Seal Extractor" [level=3] [ref=e146]
+          - paragraph [ref=e147]: 红色印章提取工具 — 基于 HSV 色彩空间的图像处理，一键提取红色印章。
+          - generic [ref=e148]:
+            - generic [ref=e149]: Python
+            - generic [ref=e150]: OpenCV
+            - generic [ref=e151]: Tkinter
+      - article [ref=e152] [cursor=pointer]:
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - img [ref=e156]
+            - link [ref=e158]:
+              - /url: https://github.com/JohnnyChanZY/email-monitor
+              - img [ref=e159]
+          - heading "Email Monitor" [level=3] [ref=e161]
+          - paragraph [ref=e162]: AI 邮件监控助手 — 智能邮件过滤与 QQ 通知推送，不错过重要信息。
+          - generic [ref=e163]:
+            - generic [ref=e164]: Python
+            - generic [ref=e165]: AI
+            - generic [ref=e166]: Notification
+  - generic [ref=e167]:
+    - img
+    - img
+    - generic [ref=e168]:
+      - generic [ref=e169]:
+        - generic [ref=e170]: Contact
+        - heading "联系我" [level=2] [ref=e171]
+      - generic [ref=e172]:
+        - paragraph [ref=e173]: 有兴趣合作或只是想打个招呼？随时联系我！
+        - generic [ref=e174]:
+          - link "johnny@example.com" [ref=e175] [cursor=pointer]:
+            - /url: mailto:johnny@example.com
+            - img [ref=e176]
+            - generic [ref=e179]: johnny@example.com
+          - link "GitHub" [ref=e180] [cursor=pointer]:
+            - /url: https://github.com/johnny
+            - img [ref=e181]
+            - generic [ref=e183]: GitHub
+          - link "Twitter" [ref=e184] [cursor=pointer]:
+            - /url: https://twitter.com/johnny
+            - img [ref=e185]
+            - generic [ref=e187]: Twitter
+  - contentinfo [ref=e188]:
+    - generic [ref=e190]:
+      - paragraph [ref=e191]: "{ Johnny's Blog } — Built with passion & code"
+      - paragraph [ref=e192]: © 2026 Johnny. All rights reserved.

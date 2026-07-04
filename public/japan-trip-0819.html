@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇯🇵 日本旅行行程 - 2026年8月</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        :root {
+            --primary: #e74c3c;
+            --primary-light: #ff6b6b;
+            --accent: #2d3436;
+            --gold: #f39c12;
+            --sky: #0984e3;
+            --green: #00b894;
+            --purple: #6c5ce7;
+            --bg: #fafafa;
+            --card: #ffffff;
+            --text: #2d3436;
+            --text-light: #636e72;
+            --border: #e9ecef;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 30%, #fd79a8 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, -20px) rotate(5deg); }
+        }
+        .hero h1 { font-size: 2.8em; margin-bottom: 8px; position: relative; text-shadow: 2px 2px 8px rgba(0,0,0,0.2); }
+        .hero .subtitle { font-size: 1.2em; opacity: 0.95; position: relative; }
+        .hero .dates {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 24px;
+            border-radius: 30px;
+            margin-top: 15px;
+            font-size: 1em;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        .hero .people {
+            margin-top: 12px;
+            font-size: 0.95em;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        /* Container */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        /* Section */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 40px 0 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .section-title .line { flex: 1; height: 2px; background: var(--border); }
+
+        /* Card */
+        .card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.1); }
+
+        /* Day Card */
+        .day-card { display: flex; gap: 20px; align-items: flex-start; }
+        .day-num {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            min-width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .day-num .label { font-size: 0.7em; opacity: 0.85; }
+        .day-num .num { font-size: 1.4em; line-height: 1; }
+        .day-body { flex: 1; }
+        .day-body h3 { font-size: 1.15em; margin-bottom: 8px; color: var(--text); }
+        .day-body .desc { color: var(--text-light); font-size: 0.95em; line-height: 1.7; }
+        .day-body .route {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f8f9fa;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Flight Card */
+        .flight-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: linear-gradient(135deg, #dfe6e9, #f8f9fa);
+            border-radius: 14px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        .flight-icon {
+            font-size: 2em;
+            min-width: 50px;
+            text-align: center;
+        }
+        .flight-info { flex: 1; }
+        .flight-info .flight-no { font-weight: 700; font-size: 1.1em; color: var(--accent); }
+        .flight-info .flight-route { color: var(--text-light); font-size: 0.9em; margin-top: 2px; }
+        .flight-info .flight-people { color: var(--purple); font-size: 0.85em; margin-top: 4px; font-weight: 500; }
+        .flight-time { text-align: right; }
+        .flight-time .time { font-weight: 700; font-size: 1.15em; color: var(--accent); }
+        .flight-time .airport { font-size: 0.8em; color: var(--text-light); }
+
+        /* Accommodation */
+        .accom-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .accom-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            flex-shrink: 0;
+        }
+        .accom-icon.kyoto { background: #ffeaa7; }
+        .accom-icon.nara { background: #dfe6e9; }
+        .accom-icon.osaka { background: #fab1a0; }
+        .accom-body { flex: 1; }
+        .accom-body h3 { font-size: 1.1em; margin-bottom: 4px; }
+        .accom-body .accom-loc { color: var(--text-light); font-size: 0.9em; margin-bottom: 10px; }
+        .accom-body .accom-detail {
+            background: #f8f9fa;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        .accom-body .accom-detail strong { color: var(--text); }
+
+        /* Map Button */
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--sky);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin-top: 12px;
+        }
+        .map-btn:hover { background: #0769b5; transform: translateY(-1px); }
+        .map-btn svg { width: 16px; height: 16px; fill: white; }
+
+        /* Info Grid */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
+        .info-chip {
+            background: #f8f9fa;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.9em;
+        }
+        .info-chip .chip-label { color: var(--text-light); font-size: 0.8em; margin-bottom: 2px; }
+        .info-chip .chip-value { color: var(--text); font-weight: 600; }
+
+        /* Password Box */
+        .pw-box {
+            background: linear-gradient(135deg, #fff9db, #ffeaa7);
+            border: 2px dashed #f39c12;
+            padding: 16px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 14px 0;
+        }
+        .pw-box .pw-label { font-size: 0.85em; color: #856404; }
+        .pw-box .pw-value { font-size: 1.5em; font-weight: 700; color: #856404; letter-spacing: 3px; font-family: 'Courier New', monospace; margin-top: 4px; }
+
+        /* Checkin Steps */
+        .steps { list-style: none; padding: 0; margin: 12px 0; }
+        .steps li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 14px;
+            margin-bottom: 6px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            font-size: 0.9em;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        .steps li .n {
+            background: var(--primary);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* Quick Links */
+        .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9em;
+            color: white;
+            transition: all 0.2s;
+        }
+        .quick-link:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .quick-link.maps { background: var(--sky); }
+        .quick-link.checkin { background: var(--green); }
+        .quick-link.email { background: var(--primary); }
+
+        /* Note */
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #f39c12;
+            padding: 12px 16px;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.9em;
+            color: #856404;
+            line-height: 1.6;
+            margin: 14px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-light);
+            font-size: 0.85em;
+        }
+        .footer .flags { font-size: 2em; margin-bottom: 8px; }
+
+        /* Timeline connector */
+        .day-connector {
+            width: 2px;
+            height: 20px;
+            background: var(--border);
+            margin-left: 51px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2em; }
+            .day-card { flex-direction: column; gap: 12px; }
+            .day-num { flex-direction: row; width: 100%; height: auto; padding: 10px 16px; border-radius: 10px; gap: 8px; }
+            .accom-card { flex-direction: column; gap: 12px; }
+            .flight-card { flex-direction: column; text-align: center; gap: 10px; }
+            .flight-time { text-align: center; }
+            .day-connector { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+    <h1>🇯🇵 日本旅行</h1>
+    <div class="subtitle">京都 · 宇治 · 奈良 · 大阪 · 东京</div>
+    <div class="dates">📅 2026年8月16日 — 8月25日</div>
+    <div class="people">👥 一行五人 · 爸爸 · 妈妈 · 妹妹 · 我 · 朋友</div>
+</div>
+
+<div class="container">
+
+    <!-- 航班信息 -->
+    <div class="section-title">✈️ 航班信息 <span class="line"></span></div>
+
+    <div class="flight-card">
+        <div class="flight-icon">🛫</div>
+        <div class="flight-info">
+            <div class="flight-no">UO 688</div>
+            <div class="flight-route">香港国际机场 → 关西国际机场</div>
+            <div class="flight-people">👥 一行五人同行</div>
+        </div>
+        <div class="flight-time">
+            <div class="time">8月16日 14:55 → 19:40</div>
+            <div class="airport">HKG → KIX</div>
+        </div>
+    </div>
+
+    <div class="flight-card">
+        <div class="flight-icon">🛬</div>
+        <div class="flight-info">
+            <div class="flight-no">UO 851</div>
+            <div class="flight-route">关西国际机场 → 香港国际机场</div>
+            <div class="flight-people">👥 爸爸 · 妈妈 · 妹妹</div>
+        </div>
+        <div class="flight-time">
+            <div class="time">8月22日 12:45 → 15:55</div>
+            <div class="airport">KIX → HKG</div>
+        </div>
+    </div>
+
+    <div class="flight-card">
+        <div class="flight-icon">🛫</div>
+        <div class="flight-info">
+            <div class="flight-no">NH 026</div>
+            <div class="flight-route">大阪伊丹机场 → 东京羽田机场</div>
+            <div class="flight-people">👥 我 · 朋友</div>
+        </div>
+        <div class="flight-time">
+            <div class="time">8月22日 12:50 → 14:10</div>
+            <div class="airport">ITM → HND</div>
+        </div>
+    </div>
+
+    <div class="flight-card">
+        <div class="flight-icon">🛬</div>
+        <div class="flight-info">
+            <div class="flight-no">UO 849</div>
+            <div class="flight-route">东京成田机场 → 香港国际机场</div>
+            <div class="flight-people">👥 我 · 朋友</div>
+        </div>
+        <div class="flight-time">
+            <div class="time">8月25日 15:45 → 19:40</div>
+            <div class="airport">NRT → HKG</div>
+        </div>
+    </div>
+
+    <!-- 日程安排 -->
+    <div class="section-title">📅 日程安排 <span class="line"></span></div>
+
+    <!-- Day 1 -->
+    <div class="card">
+        <div class="day-card">
+            <div class="day-num"><span class="label">8月</span><span class="num">16</span></div>
+            <div class="day-body">
+                <h3>✈️ 香港 → 京都</h3>
+                <div class="desc">
+                    一行五人乘坐 <strong>UO 688</strong> 航班，14:55 从香港起飞，19:40 抵达关西国际机场。<br>
+                    抵达后前往京都，入住京都市南区东九条的民宿。
+                </div>
+                <div class="route">🇭🇰 香港 ✈️ → 🏯 京都</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 2 -->
+    <div class="card">
+        <div class="day-card">
+            <div class="day-num"><span class="label">8月</span><span class="num">17</span></div>
+            <div class="day-body">
+                <h3>🍵 京都 → 宇治 → 京都</h3>
+                <div class="desc">
+                    从京都出发前往宇治，游览平等院凤凰堂、宇治川、源氏物语博物馆等景点。<br>
+                    品尝正宗的宇治抹茶，下午返回京都继续探索。
+                </div>
+                <div class="route">🏯 京都 → 🍵 宇治 → 🏯 京都</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 3 -->
+    <div class="card">
+        <div class="day-card">
+            <div class="day-num"><span class="label">8月</span><span class="num">18</span></div>
+            <div class="day-body">
+                <h3>⛩️ 京都 → 奈良</h3>
+                <div class="desc">
+                    上午在京都游玩（清水寺、伏见稻荷大社等）。<br>
+                    下午前往奈良，入住奈良民宿。傍晚可在奈良公园与小鹿互动 🦌
+                </div>
+                <div class="route">🏯 京都 → 🦌 奈良</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 4 -->
+    <div class="card">
+        <div class="day-card">
+            <div class="day-num"><span class="label">8月</span><span class="num">19</span></div>
+            <div class="day-body">
+                <h3>🦌 奈良 → 大阪</h3>
+                <div class="desc">
+                    上午在奈良游玩（东大寺、春日大社、奈良公园）。<br>
+                    下午前往大阪，入住大阪中央区高津的 ASOBO 黑门民宿。
+                </div>
+                <div class="route">🦌 奈良 → 🏙️ 大阪</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 5 -->
+    <div class="card">
+        <div class="day-card">
+            <div class="day-num"><span class="label">8月</span><span class="num">20</span></div>
+            <div class="day-body">
+                <h3>🎢 环球影城一日游</h3>
+                <div class="desc">
+                    从大阪民宿出发，前往日本环球影城（USJ）畅玩一整天！<br>
+                    哈利波特魔法世界、超级任天堂世界、侏罗纪公园等精彩项目。<br>
+                    晚上返回大阪民宿入住。
+                </div>
+                <div class="route">🏙️ 大阪 → 🎢 USJ → 🏙️ 大阪</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 6 -->
+    <div class="card">
+        <div class="day-card">
+            <div class="day-num"><span class="label">8月</span><span class="num">21</span></div>
+            <div class="day-body">
+                <h3>🏙️ 大阪观光</h3>
+                <div class="desc">
+                    大阪自由行日！推荐：大阪城、通天阁、道顿堀、心斋桥、黑门市场。<br>
+                    品尝大阪烧、章鱼烧、串炸等关西美食。<br>
+                    晚上返回大阪民宿入住。
+                </div>
+                <div class="route">🏙️ 大阪市内游玩</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 7 - Split -->
+    <div class="card" style="border-left: 4px solid var(--purple);">
+        <div class="day-card">
+            <div class="day-num" style="background: linear-gradient(135deg, var(--purple), #a29bfe);"><span class="label">8月</span><span class="num">22</span></div>
+            <div class="day-body">
+                <h3>🔀 兵分两路</h3>
+                <div class="desc">
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
+                        <div style="background: #f8f9fa; padding: 14px; border-radius: 10px;">
+                            <strong style="color: var(--primary);">👨‍👩‍👧 爸爸 · 妈妈 · 妹妹</strong><br>
+                            <span style="font-size: 0.9em;">UO 851 · 关西 → 香港</span><br>
+                            <span style="font-size: 0.9em;">12:45 → 15:55</span><br>
+                            <span style="color: var(--green); font-weight: 600;">🏠 抵达香港</span>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 14px; border-radius: 10px;">
+                            <strong style="color: var(--sky);">🧑‍🤝‍🧑 我 · 朋友</strong><br>
+                            <span style="font-size: 0.9em;">NH 026 · 伊丹 → 东京</span><br>
+                            <span style="font-size: 0.9em;">12:50 → 14:10</span><br>
+                            <span style="color: var(--sky); font-weight: 600;">🗼 前往东京</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 7 东京抵达 -->
+    <div class="card">
+        <div class="day-card">
+            <div class="day-num" style="background: linear-gradient(135deg, var(--sky), #74b9ff);"><span class="label">8月</span><span class="num">22</span></div>
+            <div class="day-body">
+                <h3>✈️ 大阪 → 东京</h3>
+                <div class="desc">
+                    从大阪伊丹机场乘坐 <strong>NH 026</strong> 航班飞往东京（12:50 → 14:10）。<br>
+                    抵达东京后安顿住宿，下午/晚上自由活动。<br>
+                    推荐：浅草寺、秋叶原、新宿歌舞伎町等。
+                </div>
+                <div class="route">🏙️ 大阪 ✈️ → 🗼 东京</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 8 东京 -->
+    <div class="card">
+        <div class="day-card">
+            <div class="day-num" style="background: linear-gradient(135deg, var(--sky), #74b9ff);"><span class="label">8月</span><span class="num">23</span></div>
+            <div class="day-body">
+                <h3>🗼 东京观光</h3>
+                <div class="desc">
+                    东京自由行日！推荐行程：<br>
+                    🔸 涩谷十字路口 & 忠犬八公像<br>
+                    🔸 明治神宫 & 竹下通<br>
+                    🔸 东京塔 / 晴空塔<br>
+                    🔸 台场（高达独角兽、teamLab）<br>
+                    晚上可以逛新宿或银座。
+                </div>
+                <div class="route">🗼 东京市内游玩</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 9 富士山 -->
+    <div class="card" style="border-left: 4px solid var(--gold);">
+        <div class="day-card">
+            <div class="day-num" style="background: linear-gradient(135deg, #e17055, var(--gold));"><span class="label">8月</span><span class="num">24</span></div>
+            <div class="day-body">
+                <h3>🗻 登顶富士山</h3>
+                <div class="desc">
+                    今日重点行程 — 攀登日本最高峰富士山！<br><br>
+                    📍 推荐路线：吉田路线（最热门，适合初次攀登）<br>
+                    🚌 从东京出发：新宿高速巴士 → 富士山五合目（约2.5小时）<br>
+                    ⏰ 建议凌晨出发，争取在山顶看日出 🌅<br>
+                    🥾 海拔 3,776m，注意高反，备好保暖衣物和雨具<br><br>
+                    <strong>⚠️ 注意事项：</strong><br>
+                    ・富士山开山季为7月1日-9月10日，8月下旬登山条件良好<br>
+                    ・五合目有休息站和补给点<br>
+                    ・下山后可泡温泉放松 ♨️
+                </div>
+                <div class="route">🗼 东京 → 🗻 富士山 → 🗼 东京</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-connector"></div>
+
+    <!-- Day 10 返程 -->
+    <div class="card">
+        <div class="day-card">
+            <div class="day-num" style="background: linear-gradient(135deg, var(--sky), #74b9ff);"><span class="label">8月</span><span class="num">25</span></div>
+            <div class="day-body">
+                <h3>🛫 东京 → 香港</h3>
+                <div class="desc">
+                    上午收拾行李，最后的购物时间。<br>
+                    乘坐 <strong>UO 849</strong> 航班，15:45 从东京起飞，19:40 抵达香港 🇭🇰<br>
+                    日本之旅圆满结束！🎉
+                </div>
+                <div class="route">🗼 东京 ✈️ → 🇭🇰 香港</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 住宿信息 -->
+    <div class="section-title">🏠 住宿信息 <span class="line"></span></div>
+
+    <!-- 京都 -->
+    <div class="card">
+        <div class="accom-card">
+            <div class="accom-icon kyoto">🏯</div>
+            <div class="accom-body">
+                <h3>京都民宿 — Rental House near Kyoto Station</h3>
+                <div class="accom-loc">📍 京都市南区东九条东岩本町6-3 · 8月16日-18日（2晚）</div>
+                <div class="info-grid">
+                    <div class="info-chip">
+                        <div class="chip-label">确认码</div>
+                        <div class="chip-value">HMY22MNMPD</div>
+                    </div>
+                    <div class="info-chip">
+                        <div class="chip-label">入住人数</div>
+                        <div class="chip-value">5位客人</div>
+                    </div>
+                    <div class="info-chip">
+                        <div class="chip-label">邮编</div>
+                        <div class="chip-value">601-8006</div>
+                    </div>
+                    <div class="info-chip">
+                        <div class="chip-label">平台</div>
+                        <div class="chip-value">Airbnb</div>
+                    </div>
+                </div>
+                <a href="https://www.google.com/maps/search/?api=1&query=京都市南区東九条東岩本町6-3+601-8006" target="_blank" class="map-btn">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    在 Google Maps 中查看
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 奈良 -->
+    <div class="card">
+        <div class="accom-card">
+            <div class="accom-icon nara">🦌</div>
+            <div class="accom-body">
+                <h3>奈良民宿 — Shika HOUSE 2 / Kaji HOUSE 2</h3>
+                <div class="accom-loc">📍 奈良县奈良市柴辺町42-20（灰墙）· 8月18日-19日（1晚）</div>
+                <div class="info-grid">
+                    <div class="info-chip">
+                        <div class="chip-label">最近车站</div>
+                        <div class="chip-value">近铁/JR奈良站 步行8分钟</div>
+                    </div>
+                    <div class="info-chip">
+                        <div class="chip-label">入住时间</div>
+                        <div class="chip-value">15:00</div>
+                    </div>
+                    <div class="info-chip">
+                        <div class="chip-label">床型</div>
+                        <div class="chip-value">2张单人床 + 3张双人床</div>
+                    </div>
+                    <div class="info-chip">
+                        <div class="chip-label">平台</div>
+                        <div class="chip-value">Airbnb</div>
+                    </div>
+                </div>
+                <a href="https://maps.app.goo.gl/LkEP1cyQ57thaubH6" target="_blank" class="map-btn">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    在 Google Maps 中查看
+                </a>
+                <div class="note">
+                    ⚠️ 入口处有监控摄像头，用于核实身份证件和房客人数。如房客人数变化请提前更改。<br>
+                    🚗 可停轻型车辆（4.4m × 2.2m），多辆车请使用附近投币停车场。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 大阪 -->
+    <div class="card">
+        <div class="accom-card">
+            <div class="accom-icon osaka">🏙️</div>
+            <div class="accom-body">
+                <h3>大阪民宿 — ASOBO大阪黑门 黑門1号</h3>
+                <div class="accom-loc">📍 大阪市中央区高津3-12-17（542-0072）· 8月19日-22日（3晚）</div>
+                <div class="info-grid">
+                    <div class="info-chip">
+                        <div class="chip-label">确认号</div>
+                        <div class="chip-value">HMBMZYCKWH</div>
+                    </div>
+                    <div class="info-chip">
+                        <div class="chip-label">附近地标</div>
+                        <div class="chip-value">黑门市场附近</div>
+                    </div>
+                    <div class="info-chip">
+                        <div class="chip-label">联系邮箱</div>
+                        <div class="chip-value">2573048892@qq.com</div>
+                    </div>
+                    <div class="info-chip">
+                        <div class="chip-label">联系电话</div>
+                        <div class="chip-value">+81-06-6649-3888</div>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=542-0072+大阪市中央区高津3-12-17" target="_blank" class="map-btn">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    在 Google Maps 中查看
+                </a>
+
+                <h4 style="margin-top: 18px; margin-bottom: 10px; font-size: 1em;">🔑 自助入住指引</h4>
+                <ul class="steps">
+                    <li><span class="n">1</span><span>在浏览器中打开自助入住链接：<br><a href="https://www.smartorder.jp/selfcheckin/" target="_blank" style="color: var(--sky);">https://www.smartorder.jp/selfcheckin/</a></span></li>
+                    <li><span class="n">2</span><span>输入自助入住密码或确认号</span></li>
+                    <li><span class="n">3</span><span>填写所有房客的必填信息</span></li>
+                    <li><span class="n">4</span><span>提交后前往「入住说明」页面，获取房间出入详情</span></li>
+                </ul>
+
+                <div class="pw-box">
+                    <div class="pw-label">🔑 自助入住密码</div>
+                    <div class="pw-value">52076403</div>
+                    <div style="color: #856404; font-size: 0.9em; margin-top: 4px;">确认号：HMBMZYCKWH</div>
+                </div>
+
+                <div class="note">
+                    ⚠️ 必须提交所有房客的自助入住表格后，才能查看「入住说明」页面获取房间出入详情。<br>
+                    💡 可提前上传一张随意照片满足自拍要求，抵达时可拍摄团体照片替换。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 快捷链接 -->
+    <div class="section-title">🔗 快捷链接 <span class="line"></span></div>
+    <div class="card">
+        <div class="quick-links">
+            <a href="https://www.google.com/maps/search/?api=1&query=京都市南区東九条東岩本町6-3+601-8006" target="_blank" class="quick-link maps">📍 京都民宿</a>
+            <a href="https://maps.app.goo.gl/LkEP1cyQ57thaubH6" target="_blank" class="quick-link maps">📍 奈良民宿</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=542-0072+大阪市中央区高津3-12-17" target="_blank" class="quick-link maps">📍 大阪民宿</a>
+            <a href="https://www.smartorder.jp/selfcheckin/" target="_blank" class="quick-link checkin">🔑 大阪自助入住</a>
+            <a href="mailto:2573048892@qq.com" class="quick-link email">📧 联系大阪房东</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="flags">🇯🇵 🏯 🍵 🦌 🏙️ 🎢 🗼</div>
+        <p>日本旅行行程 · 2026年8月16日 — 8月25日</p>
+        <p style="margin-top: 4px; opacity: 0.7;">Generated by Hermes Agent</p>
+    </div>
+
+</div>
+</body>
+</html>

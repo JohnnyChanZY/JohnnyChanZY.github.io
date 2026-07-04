@@ -1,0 +1,293 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - heading "🇯🇵 日本旅行" [level=1] [ref=e3]
+    - generic [ref=e4]: 京都 · 宇治 · 奈良 · 大阪 · 东京
+    - generic [ref=e5]: 📅 2026年8月16日 — 8月25日
+    - generic [ref=e6]: 👥 一行五人 · 爸爸 · 妈妈 · 妹妹 · 我 · 朋友
+  - generic [ref=e7]:
+    - generic [ref=e8]: ✈️ 航班信息
+    - generic [ref=e10]:
+      - generic [ref=e11]: 🛫
+      - generic [ref=e12]:
+        - generic [ref=e13]: UO 688
+        - generic [ref=e14]: 香港国际机场 → 关西国际机场
+        - generic [ref=e15]: 👥 一行五人同行
+      - generic [ref=e16]:
+        - generic [ref=e17]: 8月16日 14:55 → 19:40
+        - generic [ref=e18]: HKG → KIX
+    - generic [ref=e19]:
+      - generic [ref=e20]: 🛬
+      - generic [ref=e21]:
+        - generic [ref=e22]: UO 851
+        - generic [ref=e23]: 关西国际机场 → 香港国际机场
+        - generic [ref=e24]: 👥 爸爸 · 妈妈 · 妹妹
+      - generic [ref=e25]:
+        - generic [ref=e26]: 8月22日 12:45 → 15:55
+        - generic [ref=e27]: KIX → HKG
+    - generic [ref=e28]:
+      - generic [ref=e29]: 🛫
+      - generic [ref=e30]:
+        - generic [ref=e31]: NH 026
+        - generic [ref=e32]: 大阪伊丹机场 → 东京羽田机场
+        - generic [ref=e33]: 👥 我 · 朋友
+      - generic [ref=e34]:
+        - generic [ref=e35]: 8月22日 12:50 → 14:10
+        - generic [ref=e36]: ITM → HND
+    - generic [ref=e37]:
+      - generic [ref=e38]: 🛬
+      - generic [ref=e39]:
+        - generic [ref=e40]: UO 849
+        - generic [ref=e41]: 东京成田机场 → 香港国际机场
+        - generic [ref=e42]: 👥 我 · 朋友
+      - generic [ref=e43]:
+        - generic [ref=e44]: 8月25日 15:45 → 19:40
+        - generic [ref=e45]: NRT → HKG
+    - generic [ref=e46]: 📅 日程安排
+    - generic [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e51]: 8月
+        - generic [ref=e52]: "16"
+      - generic [ref=e53]:
+        - heading "✈️ 香港 → 京都" [level=3] [ref=e54]
+        - generic [ref=e55]:
+          - text: 一行五人乘坐
+          - strong [ref=e56]: UO 688
+          - text: 航班，14:55 从香港起飞，19:40 抵达关西国际机场。
+          - text: 抵达后前往京都，入住京都市南区东九条的民宿。
+        - generic [ref=e57]: 🇭🇰 香港 ✈️ → 🏯 京都
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]: 8月
+        - generic [ref=e63]: "17"
+      - generic [ref=e64]:
+        - heading "🍵 京都 → 宇治 → 京都" [level=3] [ref=e65]
+        - generic [ref=e66]:
+          - text: 从京都出发前往宇治，游览平等院凤凰堂、宇治川、源氏物语博物馆等景点。
+          - text: 品尝正宗的宇治抹茶，下午返回京都继续探索。
+        - generic [ref=e67]: 🏯 京都 → 🍵 宇治 → 🏯 京都
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]: 8月
+        - generic [ref=e73]: "18"
+      - generic [ref=e74]:
+        - heading "⛩️ 京都 → 奈良" [level=3] [ref=e75]
+        - generic [ref=e76]:
+          - text: 上午在京都游玩（清水寺、伏见稻荷大社等）。
+          - text: 下午前往奈良，入住奈良民宿。傍晚可在奈良公园与小鹿互动 🦌
+        - generic [ref=e77]: 🏯 京都 → 🦌 奈良
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]: 8月
+        - generic [ref=e83]: "19"
+      - generic [ref=e84]:
+        - heading "🦌 奈良 → 大阪" [level=3] [ref=e85]
+        - generic [ref=e86]:
+          - text: 上午在奈良游玩（东大寺、春日大社、奈良公园）。
+          - text: 下午前往大阪，入住大阪中央区高津的 ASOBO 黑门民宿。
+        - generic [ref=e87]: 🦌 奈良 → 🏙️ 大阪
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - generic [ref=e92]: 8月
+        - generic [ref=e93]: "20"
+      - generic [ref=e94]:
+        - heading "🎢 环球影城一日游" [level=3] [ref=e95]
+        - generic [ref=e96]:
+          - text: 从大阪民宿出发，前往日本环球影城（USJ）畅玩一整天！
+          - text: 哈利波特魔法世界、超级任天堂世界、侏罗纪公园等精彩项目。
+          - text: 晚上返回大阪民宿入住。
+        - generic [ref=e97]: 🏙️ 大阪 → 🎢 USJ → 🏙️ 大阪
+    - generic [ref=e100]:
+      - generic [ref=e101]:
+        - generic [ref=e102]: 8月
+        - generic [ref=e103]: "21"
+      - generic [ref=e104]:
+        - heading "🏙️ 大阪观光" [level=3] [ref=e105]
+        - generic [ref=e106]:
+          - text: 大阪自由行日！推荐：大阪城、通天阁、道顿堀、心斋桥、黑门市场。
+          - text: 品尝大阪烧、章鱼烧、串炸等关西美食。
+          - text: 晚上返回大阪民宿入住。
+        - generic [ref=e107]: 🏙️ 大阪市内游玩
+    - generic [ref=e110]:
+      - generic [ref=e111]:
+        - generic [ref=e112]: 8月
+        - generic [ref=e113]: "22"
+      - generic [ref=e114]:
+        - heading "🔀 兵分两路" [level=3] [ref=e115]
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - strong [ref=e119]: 👨‍👩‍👧 爸爸 · 妈妈 · 妹妹
+            - text: UO 851 · 关西 → 香港
+            - text: 12:45 → 15:55
+            - text: 🏠 抵达香港
+          - generic [ref=e120]:
+            - strong [ref=e121]: 🧑‍🤝‍🧑 我 · 朋友
+            - text: NH 026 · 伊丹 → 东京
+            - text: 12:50 → 14:10
+            - text: 🗼 前往东京
+    - generic [ref=e124]:
+      - generic [ref=e125]:
+        - generic [ref=e126]: 8月
+        - generic [ref=e127]: "22"
+      - generic [ref=e128]:
+        - heading "✈️ 大阪 → 东京" [level=3] [ref=e129]
+        - generic [ref=e130]:
+          - text: 从大阪伊丹机场乘坐
+          - strong [ref=e131]: NH 026
+          - text: 航班飞往东京（12:50 → 14:10）。
+          - text: 抵达东京后安顿住宿，下午/晚上自由活动。
+          - text: 推荐：浅草寺、秋叶原、新宿歌舞伎町等。
+        - generic [ref=e132]: 🏙️ 大阪 ✈️ → 🗼 东京
+    - generic [ref=e135]:
+      - generic [ref=e136]:
+        - generic [ref=e137]: 8月
+        - generic [ref=e138]: "23"
+      - generic [ref=e139]:
+        - heading "🗼 东京观光" [level=3] [ref=e140]
+        - generic [ref=e141]:
+          - text: 东京自由行日！推荐行程：
+          - text: 🔸 涩谷十字路口 & 忠犬八公像
+          - text: 🔸 明治神宫 & 竹下通
+          - text: 🔸 东京塔 / 晴空塔
+          - text: 🔸 台场（高达独角兽、teamLab）
+          - text: 晚上可以逛新宿或银座。
+        - generic [ref=e142]: 🗼 东京市内游玩
+    - generic [ref=e145]:
+      - generic [ref=e146]:
+        - generic [ref=e147]: 8月
+        - generic [ref=e148]: "24"
+      - generic [ref=e149]:
+        - heading "🗻 登顶富士山" [level=3] [ref=e150]
+        - generic [ref=e151]:
+          - text: 今日重点行程 — 攀登日本最高峰富士山！
+          - text: 📍 推荐路线：吉田路线（最热门，适合初次攀登）
+          - text: 🚌 从东京出发：新宿高速巴士 → 富士山五合目（约2.5小时）
+          - text: ⏰ 建议凌晨出发，争取在山顶看日出 🌅
+          - text: 🥾 海拔 3,776m，注意高反，备好保暖衣物和雨具
+          - strong [ref=e152]: ⚠️ 注意事项：
+          - text: ・富士山开山季为7月1日-9月10日，8月下旬登山条件良好
+          - text: ・五合目有休息站和补给点
+          - text: ・下山后可泡温泉放松 ♨️
+        - generic [ref=e153]: 🗼 东京 → 🗻 富士山 → 🗼 东京
+    - generic [ref=e156]:
+      - generic [ref=e157]:
+        - generic [ref=e158]: 8月
+        - generic [ref=e159]: "25"
+      - generic [ref=e160]:
+        - heading "🛫 东京 → 香港" [level=3] [ref=e161]
+        - generic [ref=e162]:
+          - text: 上午收拾行李，最后的购物时间。
+          - text: 乘坐
+          - strong [ref=e163]: UO 849
+          - text: 航班，15:45 从东京起飞，19:40 抵达香港 🇭🇰
+          - text: 日本之旅圆满结束！🎉
+        - generic [ref=e164]: 🗼 东京 ✈️ → 🇭🇰 香港
+    - generic [ref=e165]: 🏠 住宿信息
+    - generic [ref=e168]:
+      - generic [ref=e169]: 🏯
+      - generic [ref=e170]:
+        - heading "京都民宿 — Rental House near Kyoto Station" [level=3] [ref=e171]
+        - generic [ref=e172]: 📍 京都市南区东九条东岩本町6-3 · 8月16日-18日（2晚）
+        - generic [ref=e173]:
+          - generic [ref=e174]:
+            - generic [ref=e175]: 确认码
+            - generic [ref=e176]: HMY22MNMPD
+          - generic [ref=e177]:
+            - generic [ref=e178]: 入住人数
+            - generic [ref=e179]: 5位客人
+          - generic [ref=e180]:
+            - generic [ref=e181]: 邮编
+            - generic [ref=e182]: 601-8006
+          - generic [ref=e183]:
+            - generic [ref=e184]: 平台
+            - generic [ref=e185]: Airbnb
+        - link "在 Google Maps 中查看" [ref=e186] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=京都市南区東九条東岩本町6-3+601-8006
+          - img [ref=e187]
+          - text: 在 Google Maps 中查看
+    - generic [ref=e190]:
+      - generic [ref=e191]: 🦌
+      - generic [ref=e192]:
+        - heading "奈良民宿 — Shika HOUSE 2 / Kaji HOUSE 2" [level=3] [ref=e193]
+        - generic [ref=e194]: 📍 奈良县奈良市柴辺町42-20（灰墙）· 8月18日-19日（1晚）
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - generic [ref=e197]: 最近车站
+            - generic [ref=e198]: 近铁/JR奈良站 步行8分钟
+          - generic [ref=e199]:
+            - generic [ref=e200]: 入住时间
+            - generic [ref=e201]: 15:00
+          - generic [ref=e202]:
+            - generic [ref=e203]: 床型
+            - generic [ref=e204]: 2张单人床 + 3张双人床
+          - generic [ref=e205]:
+            - generic [ref=e206]: 平台
+            - generic [ref=e207]: Airbnb
+        - link "在 Google Maps 中查看" [ref=e208] [cursor=pointer]:
+          - /url: https://maps.app.goo.gl/LkEP1cyQ57thaubH6
+          - img [ref=e209]
+          - text: 在 Google Maps 中查看
+        - generic [ref=e211]:
+          - text: ⚠️ 入口处有监控摄像头，用于核实身份证件和房客人数。如房客人数变化请提前更改。
+          - text: 🚗 可停轻型车辆（4.4m × 2.2m），多辆车请使用附近投币停车场。
+    - generic [ref=e213]:
+      - generic [ref=e214]: 🏙️
+      - generic [ref=e215]:
+        - heading "大阪民宿 — ASOBO大阪黑门 黑門1号" [level=3] [ref=e216]
+        - generic [ref=e217]: 📍 大阪市中央区高津3-12-17（542-0072）· 8月19日-22日（3晚）
+        - generic [ref=e218]:
+          - generic [ref=e219]:
+            - generic [ref=e220]: 确认号
+            - generic [ref=e221]: HMBMZYCKWH
+          - generic [ref=e222]:
+            - generic [ref=e223]: 附近地标
+            - generic [ref=e224]: 黑门市场附近
+          - generic [ref=e225]:
+            - generic [ref=e226]: 联系邮箱
+            - generic [ref=e227]: 2573048892@qq.com
+          - generic [ref=e228]:
+            - generic [ref=e229]: 联系电话
+            - generic [ref=e230]: +81-06-6649-3888
+        - link "在 Google Maps 中查看" [ref=e231] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=542-0072+大阪市中央区高津3-12-17
+          - img [ref=e232]
+          - text: 在 Google Maps 中查看
+        - heading "🔑 自助入住指引" [level=4] [ref=e234]
+        - list [ref=e235]:
+          - listitem [ref=e236]:
+            - generic [ref=e237]: "1"
+            - generic [ref=e238]:
+              - text: 在浏览器中打开自助入住链接：
+              - link "https://www.smartorder.jp/selfcheckin/" [ref=e239] [cursor=pointer]:
+                - /url: https://www.smartorder.jp/selfcheckin/
+          - listitem [ref=e240]:
+            - generic [ref=e241]: "2"
+            - generic [ref=e242]: 输入自助入住密码或确认号
+          - listitem [ref=e243]:
+            - generic [ref=e244]: "3"
+            - generic [ref=e245]: 填写所有房客的必填信息
+          - listitem [ref=e246]:
+            - generic [ref=e247]: "4"
+            - generic [ref=e248]: 提交后前往「入住说明」页面，获取房间出入详情
+        - generic [ref=e249]:
+          - generic [ref=e250]: 🔑 自助入住密码
+          - generic [ref=e251]: "52076403"
+          - generic [ref=e252]: 确认号：HMBMZYCKWH
+        - generic [ref=e253]:
+          - text: ⚠️ 必须提交所有房客的自助入住表格后，才能查看「入住说明」页面获取房间出入详情。
+          - text: 💡 可提前上传一张随意照片满足自拍要求，抵达时可拍摄团体照片替换。
+    - generic [ref=e254]: 🔗 快捷链接
+    - generic [ref=e257]:
+      - link "📍 京都民宿" [ref=e258] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=京都市南区東九条東岩本町6-3+601-8006
+      - link "📍 奈良民宿" [ref=e259] [cursor=pointer]:
+        - /url: https://maps.app.goo.gl/LkEP1cyQ57thaubH6
+      - link "📍 大阪民宿" [ref=e260] [cursor=pointer]:
+        - /url: https://www.google.com/maps/search/?api=1&query=542-0072+大阪市中央区高津3-12-17
+      - link "🔑 大阪自助入住" [ref=e261] [cursor=pointer]:
+        - /url: https://www.smartorder.jp/selfcheckin/
+      - link "📧 联系大阪房东" [ref=e262] [cursor=pointer]:
+        - /url: mailto:2573048892@qq.com
+    - generic [ref=e263]:
+      - generic [ref=e264]: 🇯🇵 🏯 🍵 🦌 🏙️ 🎢 🗼
+      - paragraph [ref=e265]: 日本旅行行程 · 2026年8月16日 — 8月25日
+      - paragraph [ref=e266]: Generated by Hermes Agent
