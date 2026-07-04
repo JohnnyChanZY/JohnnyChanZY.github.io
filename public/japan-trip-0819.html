@@ -132,27 +132,65 @@
 
         /* Flight Card */
         .flight-card {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 20px 24px;
+            padding: 16px 20px;
             background: linear-gradient(135deg, #dfe6e9, #f8f9fa);
             border-radius: 14px;
             margin-bottom: 12px;
             border: 1px solid var(--border);
         }
-        .flight-icon {
-            font-size: 2em;
-            min-width: 50px;
+        .flight-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .flight-header .flight-date {
+            font-weight: 700;
+            font-size: 0.95em;
+            color: var(--text);
+        }
+        .flight-header .flight-no {
+            font-weight: 700;
+            font-size: 1.05em;
+            color: var(--accent);
+            background: rgba(0,0,0,0.06);
+            padding: 2px 10px;
+            border-radius: 6px;
+        }
+        .flight-header .flight-people {
+            color: var(--purple);
+            font-size: 0.82em;
+            font-weight: 500;
+            margin-left: auto;
+        }
+        .flight-body {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .flight-body .flight-icon {
+            font-size: 1.6em;
+            min-width: 36px;
             text-align: center;
         }
-        .flight-info { flex: 1; }
-        .flight-info .flight-no { font-weight: 700; font-size: 1.1em; color: var(--accent); }
-        .flight-info .flight-route { color: var(--text-light); font-size: 0.9em; margin-top: 2px; }
-        .flight-info .flight-people { color: var(--purple); font-size: 0.85em; margin-top: 4px; font-weight: 500; }
-        .flight-time { text-align: right; }
-        .flight-time .time { font-weight: 700; font-size: 1.15em; color: var(--accent); }
-        .flight-time .airport { font-size: 0.8em; color: var(--text-light); }
+        .flight-body .flight-route {
+            flex: 1;
+            color: var(--text-light);
+            font-size: 0.92em;
+        }
+        .flight-body .flight-time {
+            text-align: right;
+            white-space: nowrap;
+        }
+        .flight-body .flight-time .time {
+            font-weight: 700;
+            font-size: 1.05em;
+            color: var(--accent);
+        }
+        .flight-body .flight-time .airport {
+            font-size: 0.78em;
+            color: var(--text-light);
+        }
 
         /* Accommodation */
         .accom-card {
@@ -409,34 +447,40 @@
         .action-btn.map-link { background: var(--sky); color: white; border-color: var(--sky); }
         .action-btn.map-link:hover { background: #0769b5; }
 
+        /* Tablet (601px - 900px) */
+        @media (max-width: 900px) {
+            .container { padding: 0 16px; }
+            .hero h1 { font-size: 2.2em; }
+            .flight-body { flex-wrap: wrap; }
+            .flight-body .flight-route { min-width: 120px; }
+        }
+
+        /* Mobile (≤ 600px) */
         @media (max-width: 600px) {
-            .hero h1 { font-size: 1.6em; }
-            .hero .subtitle { font-size: 1em; }
-            .hero .dates { font-size: 0.85em; padding: 6px 16px; }
-            .hero { padding: 32px 12px 28px; }
-            .container { padding: 0 8px; }
-            .section-title { font-size: 1.1em; margin: 20px 0 10px; }
+            .hero h1 { font-size: 1.5em; }
+            .hero .subtitle { font-size: 0.95em; }
+            .hero .dates { font-size: 0.8em; padding: 5px 14px; }
+            .hero .people { font-size: 0.82em; }
+            .hero { padding: 28px 12px 24px; }
+            .container { padding: 0 10px; }
+            .section-title { font-size: 1.05em; margin: 18px 0 10px; }
             .card { padding: 12px; border-radius: 10px; margin-bottom: 10px; }
 
-            /* Flight card - compact horizontal */
-            .flight-card {
-                flex-direction: row;
-                flex-wrap: nowrap;
-                text-align: left;
-                gap: 10px;
-                padding: 10px 12px;
-                margin-bottom: 8px;
-            }
-            .flight-icon { font-size: 1.4em; min-width: 32px; }
-            .flight-info .flight-no { font-size: 0.92em; }
-            .flight-info .flight-route { font-size: 0.78em; }
-            .flight-info .flight-people { font-size: 0.72em; }
-            .flight-time { text-align: right; min-width: 90px; }
-            .flight-time .time { font-size: 0.82em; }
-            .flight-time .airport { font-size: 0.7em; }
+            /* Flight card - vertical stack on mobile */
+            .flight-card { padding: 10px 12px; margin-bottom: 8px; }
+            .flight-header { gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+            .flight-header .flight-date { font-size: 0.82em; }
+            .flight-header .flight-no { font-size: 0.85em; padding: 1px 6px; }
+            .flight-header .flight-people { font-size: 0.7em; margin-left: 0; width: 100%; }
+            .flight-body { gap: 6px; flex-wrap: wrap; }
+            .flight-body .flight-icon { font-size: 1.1em; min-width: 24px; }
+            .flight-body .flight-route { font-size: 0.78em; flex: 1 1 100%; order: 2; }
+            .flight-body .flight-time { order: 1; text-align: left; }
+            .flight-body .flight-time .time { font-size: 0.85em; }
+            .flight-body .flight-time .airport { font-size: 0.65em; }
 
-            /* Accommodation - small icon */
-            .accom-card { flex-direction: row; gap: 10px; align-items: flex-start; }
+            /* Accommodation - smaller icon */
+            .accom-card { gap: 10px; }
             .accom-icon {
                 width: 36px;
                 height: 36px;
@@ -444,32 +488,48 @@
                 font-size: 1.1em;
             }
             .accom-body h3 { font-size: 0.95em; }
-            .accom-body .accom-loc { font-size: 0.8em; margin-bottom: 8px; }
+            .accom-body .accom-loc { font-size: 0.78em; margin-bottom: 6px; }
+
+            /* Day tabs - horizontal scroll */
+            .day-tabs {
+                gap: 4px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                flex-wrap: nowrap;
+                padding-bottom: 4px;
+            }
+            .day-tabs::-webkit-scrollbar { display: none; }
+            .day-tab {
+                padding: 6px 10px;
+                font-size: 0.72em;
+                border-radius: 6px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+            .day-tab .tab-date { font-size: 0.7em; }
 
             /* Timeline */
             .day-card { flex-direction: column; gap: 10px; }
             .day-num { flex-direction: row; width: 100%; height: auto; padding: 8px 12px; border-radius: 8px; gap: 6px; font-size: 0.9em; }
-            .day-tabs { gap: 4px; }
-            .day-tab { padding: 6px 8px; font-size: 0.72em; border-radius: 6px; }
-            .day-tab .tab-date { font-size: 0.7em; }
             .timeline { padding-left: 24px; }
             .tl-dot { left: -24px; width: 18px; height: 18px; font-size: 9px; }
             .tl-content { padding: 10px 12px; }
-            .tl-content h4 { font-size: 0.88em; }
-            .tl-content .tl-desc { font-size: 0.8em; }
+            .tl-content h4 { font-size: 0.85em; }
+            .tl-content .tl-desc { font-size: 0.78em; }
             .tl-content .tl-time { font-size: 0.72em; }
 
             /* Info & buttons */
             .info-grid { grid-template-columns: 1fr; gap: 6px; }
             .info-chip { padding: 8px 10px; font-size: 0.82em; }
-            .quick-links { gap: 5px; }
-            .quick-link { padding: 7px 10px; font-size: 0.75em; }
+            .quick-links { gap: 6px; }
+            .quick-link { padding: 8px 12px; font-size: 0.78em; }
             .pw-box { padding: 12px; }
             .pw-box .pw-value { font-size: 1.1em; }
             .steps li { padding: 7px 10px; font-size: 0.8em; }
-            .note { padding: 8px 10px; font-size: 0.8em; }
+            .note { padding: 8px 10px; font-size: 0.78em; }
             .action-btns { gap: 5px; }
-            .action-btn { padding: 4px 8px; font-size: 0.72em; }
+            .action-btn { padding: 5px 10px; font-size: 0.75em; }
         }
     </style>
 </head>
@@ -489,54 +549,66 @@
     <div class="section-title">✈️ 航班信息 <span class="line"></span></div>
 
     <div class="flight-card">
-        <div class="flight-icon">🛫</div>
-        <div class="flight-info">
-            <div class="flight-no">UO 688</div>
+        <div class="flight-header">
+            <span class="flight-date">8月16日</span>
+            <span class="flight-no">UO 688</span>
+            <span class="flight-people">👥 一行五人同行</span>
+        </div>
+        <div class="flight-body">
+            <div class="flight-icon">🛫</div>
             <div class="flight-route">香港国际机场 → 关西国际机场</div>
-            <div class="flight-people">👥 一行五人同行</div>
-        </div>
-        <div class="flight-time">
-            <div class="time">8月16日 14:55 → 19:40</div>
-            <div class="airport">HKG → KIX</div>
+            <div class="flight-time">
+                <div class="time">14:55 → 19:40</div>
+                <div class="airport">HKG → KIX</div>
+            </div>
         </div>
     </div>
 
     <div class="flight-card">
-        <div class="flight-icon">🛬</div>
-        <div class="flight-info">
-            <div class="flight-no">UO 851</div>
+        <div class="flight-header">
+            <span class="flight-date">8月22日</span>
+            <span class="flight-no">UO 851</span>
+            <span class="flight-people">👨‍👩‍👧 爸爸 · 妈妈 · 妹妹</span>
+        </div>
+        <div class="flight-body">
+            <div class="flight-icon">🛬</div>
             <div class="flight-route">关西国际机场 → 香港国际机场</div>
-            <div class="flight-people">👥 爸爸 · 妈妈 · 妹妹</div>
-        </div>
-        <div class="flight-time">
-            <div class="time">8月22日 12:45 → 15:55</div>
-            <div class="airport">KIX → HKG</div>
+            <div class="flight-time">
+                <div class="time">12:45 → 15:55</div>
+                <div class="airport">KIX → HKG</div>
+            </div>
         </div>
     </div>
 
     <div class="flight-card">
-        <div class="flight-icon">🛫</div>
-        <div class="flight-info">
-            <div class="flight-no">NH 026</div>
+        <div class="flight-header">
+            <span class="flight-date">8月22日</span>
+            <span class="flight-no">NH 026</span>
+            <span class="flight-people">🧑‍🤝‍🧑 我 · 超哥</span>
+        </div>
+        <div class="flight-body">
+            <div class="flight-icon">🛫</div>
             <div class="flight-route">大阪伊丹机场 → 东京羽田机场</div>
-            <div class="flight-people">👥 我 · 超哥</div>
-        </div>
-        <div class="flight-time">
-            <div class="time">8月22日 12:50 → 14:10</div>
-            <div class="airport">ITM → HND</div>
+            <div class="flight-time">
+                <div class="time">12:50 → 14:10</div>
+                <div class="airport">ITM → HND</div>
+            </div>
         </div>
     </div>
 
     <div class="flight-card">
-        <div class="flight-icon">🛬</div>
-        <div class="flight-info">
-            <div class="flight-no">UO 849</div>
-            <div class="flight-route">东京成田机场 → 香港国际机场</div>
-            <div class="flight-people">👥 我 · 超哥</div>
+        <div class="flight-header">
+            <span class="flight-date">8月25日</span>
+            <span class="flight-no">UO 849</span>
+            <span class="flight-people">🧑‍🤝‍🧑 我 · 超哥</span>
         </div>
-        <div class="flight-time">
-            <div class="time">8月25日 15:45 → 19:40</div>
-            <div class="airport">NRT → HKG</div>
+        <div class="flight-body">
+            <div class="flight-icon">🛬</div>
+            <div class="flight-route">东京成田机场 → 香港国际机场</div>
+            <div class="flight-time">
+                <div class="time">15:45 → 19:40</div>
+                <div class="airport">NRT → HKG</div>
+            </div>
         </div>
     </div>
 
@@ -567,15 +639,18 @@
                         <div class="tl-time">14:55 — 19:40</div>
                         <h4>✈️ 乘坐 UO 688 前往关西</h4>
                         <div class="flight-card" style="margin-top: 8px;">
-                            <div class="flight-icon">🛫</div>
-                            <div class="flight-info">
-                                <div class="flight-no">UO 688</div>
-                                <div class="flight-route">香港国际机场 → 关西国际机场</div>
-                                <div class="flight-people">👥 一行五人同行</div>
+                            <div class="flight-header">
+                                <span class="flight-date">8月16日</span>
+                                <span class="flight-no">UO 688</span>
+                                <span class="flight-people">👥 一行五人同行</span>
                             </div>
-                            <div class="flight-time">
-                                <div class="time">14:55 → 19:40</div>
-                                <div class="airport">HKG → KIX</div>
+                            <div class="flight-body">
+                                <div class="flight-icon">🛫</div>
+                                <div class="flight-route">香港国际机场 → 关西国际机场</div>
+                                <div class="flight-time">
+                                    <div class="time">14:55 → 19:40</div>
+                                    <div class="airport">HKG → KIX</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -742,9 +817,18 @@
                             确认号：HMBMZYCKWH · 黑门市场附近<br>
                             自助入住密码：52076403
                         </div>
+                        <div class="note" style="margin-top: 10px;">
+                            🔑 为确保顺利办理入住手续，请在抵达大楼时填写自助入住表：<br><br>
+                            1️⃣ 复制链接到浏览器：<a href="https://www.smartorder.jp/selfcheckin/" target="_blank" style="color: var(--sky);">https://www.smartorder.jp/selfcheckin/</a><br>
+                            　 或扫描大楼入口处的二维码<br>
+                            2️⃣ 输入自助入住密码：52076403 或确认号：HMBMZYCKWH<br>
+                            3️⃣ 填写所有房客的所有必填信息<br>
+                            4️⃣ 填写完表格后，前往「入住说明」页面获取房间出入详情
+                        </div>
                         <div class="action-btns">
                             <a href="https://www.google.com/maps/search/?api=1&query=542-0072+大阪市中央区高津3-12-17" target="_blank" class="action-btn map-link">📍 Google Maps</a>
                             <button class="action-btn copy-btn" onclick="copyText(this, '大阪市中央区高津3-12-17 542-0072')">📋 复制地址</button>
+                            <a href="https://www.smartorder.jp/selfcheckin/" target="_blank" class="action-btn map-link">🔑 自助入住登记</a>
                         </div>
                     </div>
                 </div>
@@ -850,15 +934,18 @@
                         <div class="tl-time">12:45 — 15:55</div>
                         <h4>👨‍👩‍👧 爸爸 · 妈妈 · 妹妹 返回香港</h4>
                         <div class="flight-card" style="margin-top: 8px;">
-                            <div class="flight-icon">🛬</div>
-                            <div class="flight-info">
-                                <div class="flight-no">UO 851</div>
-                                <div class="flight-route">关西国际机场 → 香港国际机场</div>
-                                <div class="flight-people">👨‍👩‍👧 爸爸 · 妈妈 · 妹妹</div>
+                            <div class="flight-header">
+                                <span class="flight-date">8月22日</span>
+                                <span class="flight-no">UO 851</span>
+                                <span class="flight-people">👨‍👩‍👧 爸爸 · 妈妈 · 妹妹</span>
                             </div>
-                            <div class="flight-time">
-                                <div class="time">12:45 → 15:55</div>
-                                <div class="airport">KIX → HKG</div>
+                            <div class="flight-body">
+                                <div class="flight-icon">🛬</div>
+                                <div class="flight-route">关西国际机场 → 香港国际机场</div>
+                                <div class="flight-time">
+                                    <div class="time">12:45 → 15:55</div>
+                                    <div class="airport">KIX → HKG</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -869,15 +956,18 @@
                         <div class="tl-time">12:50 — 14:10</div>
                         <h4>🧑‍🤝‍🧑 我 · 超哥 前往东京</h4>
                         <div class="flight-card" style="margin-top: 8px;">
-                            <div class="flight-icon">🛫</div>
-                            <div class="flight-info">
-                                <div class="flight-no">NH 026</div>
-                                <div class="flight-route">大阪伊丹机场 → 东京羽田机场</div>
-                                <div class="flight-people">🧑‍🤝‍🧑 我 · 超哥</div>
+                            <div class="flight-header">
+                                <span class="flight-date">8月22日</span>
+                                <span class="flight-no">NH 026</span>
+                                <span class="flight-people">🧑‍🤝‍🧑 我 · 超哥</span>
                             </div>
-                            <div class="flight-time">
-                                <div class="time">12:50 → 14:10</div>
-                                <div class="airport">ITM → HND</div>
+                            <div class="flight-body">
+                                <div class="flight-icon">🛫</div>
+                                <div class="flight-route">大阪伊丹机场 → 东京羽田机场</div>
+                                <div class="flight-time">
+                                    <div class="time">12:50 → 14:10</div>
+                                    <div class="airport">ITM → HND</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1019,15 +1109,18 @@
                         <div class="tl-time">15:45 — 19:40</div>
                         <h4>✈️ 乘坐 UO 849 返回香港</h4>
                         <div class="flight-card" style="margin-top: 8px;">
-                            <div class="flight-icon">🛬</div>
-                            <div class="flight-info">
-                                <div class="flight-no">UO 849</div>
-                                <div class="flight-route">东京成田机场 → 香港国际机场</div>
-                                <div class="flight-people">🧑‍🤝‍🧑 我 · 超哥</div>
+                            <div class="flight-header">
+                                <span class="flight-date">8月25日</span>
+                                <span class="flight-no">UO 849</span>
+                                <span class="flight-people">🧑‍🤝‍🧑 我 · 超哥</span>
                             </div>
-                            <div class="flight-time">
-                                <div class="time">15:45 → 19:40</div>
-                                <div class="airport">NRT → HKG</div>
+                            <div class="flight-body">
+                                <div class="flight-icon">🛬</div>
+                                <div class="flight-route">东京成田机场 → 香港国际机场</div>
+                                <div class="flight-time">
+                                    <div class="time">15:45 → 19:40</div>
+                                    <div class="airport">NRT → HKG</div>
+                                </div>
                             </div>
                         </div>
                     </div>
