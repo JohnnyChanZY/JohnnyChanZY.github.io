@@ -166,30 +166,38 @@
         .flight-body {
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: space-between;
+            gap: 8px;
         }
-        .flight-body .flight-icon {
-            font-size: 1.6em;
-            min-width: 36px;
-            text-align: center;
-        }
-        .flight-body .flight-route {
+        .flight-endpoint {
             flex: 1;
-            color: var(--text-light);
-            font-size: 0.92em;
+            min-width: 0;
         }
-        .flight-body .flight-time {
+        .flight-endpoint.dep {
+            text-align: left;
+        }
+        .flight-endpoint.arr {
             text-align: right;
+        }
+        .flight-endpoint .ep-time {
+            font-weight: 800;
+            font-size: 1.15em;
+            color: var(--accent);
             white-space: nowrap;
         }
-        .flight-body .flight-time .time {
-            font-weight: 700;
-            font-size: 1.05em;
-            color: var(--accent);
-        }
-        .flight-body .flight-time .airport {
+        .flight-endpoint .ep-airport {
             font-size: 0.78em;
             color: var(--text-light);
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .flight-arrow {
+            font-size: 1.4em;
+            color: var(--primary);
+            flex-shrink: 0;
+            padding: 0 2px;
         }
 
         /* Accommodation */
@@ -451,8 +459,6 @@
         @media (max-width: 900px) {
             .container { padding: 0 16px; }
             .hero h1 { font-size: 2.2em; }
-            .flight-body { flex-wrap: wrap; }
-            .flight-body .flight-route { min-width: 120px; }
         }
 
         /* Mobile (≤ 600px) */
@@ -466,18 +472,16 @@
             .section-title { font-size: 1.05em; margin: 18px 0 10px; }
             .card { padding: 12px; border-radius: 10px; margin-bottom: 10px; }
 
-            /* Flight card - vertical stack on mobile */
-            .flight-card { padding: 10px 12px; margin-bottom: 8px; }
-            .flight-header { gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
-            .flight-header .flight-date { font-size: 0.82em; }
-            .flight-header .flight-no { font-size: 0.85em; padding: 1px 6px; }
+            /* Flight card - key info prominent */
+            .flight-card { padding: 12px 14px; margin-bottom: 8px; }
+            .flight-header { gap: 8px; margin-bottom: 8px; justify-content: space-between; flex-wrap: wrap; }
+            .flight-header .flight-date { font-size: 0.78em; }
+            .flight-header .flight-no { font-size: 1.1em; padding: 2px 10px; letter-spacing: 1px; }
             .flight-header .flight-people { font-size: 0.7em; margin-left: 0; width: 100%; }
-            .flight-body { gap: 6px; flex-wrap: wrap; }
-            .flight-body .flight-icon { font-size: 1.1em; min-width: 24px; }
-            .flight-body .flight-route { font-size: 0.78em; flex: 1 1 100%; order: 2; }
-            .flight-body .flight-time { order: 1; text-align: left; }
-            .flight-body .flight-time .time { font-size: 0.85em; }
-            .flight-body .flight-time .airport { font-size: 0.65em; }
+            .flight-body { gap: 6px; }
+            .flight-endpoint .ep-time { font-size: 1.05em; }
+            .flight-endpoint .ep-airport { font-size: 0.7em; }
+            .flight-arrow { font-size: 1.2em; }
 
             /* Accommodation - smaller icon */
             .accom-card { gap: 10px; }
@@ -555,11 +559,14 @@
             <span class="flight-people">👥 一行五人同行</span>
         </div>
         <div class="flight-body">
-            <div class="flight-icon">🛫</div>
-            <div class="flight-route">香港国际机场 → 关西国际机场</div>
-            <div class="flight-time">
-                <div class="time">14:55 → 19:40</div>
-                <div class="airport">HKG → KIX</div>
+            <div class="flight-endpoint dep">
+                <div class="ep-time">14:55</div>
+                <div class="ep-airport">HKG 香港国际机场</div>
+            </div>
+            <div class="flight-arrow">→</div>
+            <div class="flight-endpoint arr">
+                <div class="ep-time">19:40</div>
+                <div class="ep-airport">KIX 关西国际机场</div>
             </div>
         </div>
     </div>
@@ -571,11 +578,14 @@
             <span class="flight-people">👨‍👩‍👧 爸爸 · 妈妈 · 妹妹</span>
         </div>
         <div class="flight-body">
-            <div class="flight-icon">🛬</div>
-            <div class="flight-route">关西国际机场 → 香港国际机场</div>
-            <div class="flight-time">
-                <div class="time">12:45 → 15:55</div>
-                <div class="airport">KIX → HKG</div>
+            <div class="flight-endpoint dep">
+                <div class="ep-time">12:45</div>
+                <div class="ep-airport">KIX 关西国际机场</div>
+            </div>
+            <div class="flight-arrow">→</div>
+            <div class="flight-endpoint arr">
+                <div class="ep-time">15:55</div>
+                <div class="ep-airport">HKG 香港国际机场</div>
             </div>
         </div>
     </div>
@@ -587,11 +597,14 @@
             <span class="flight-people">🧑‍🤝‍🧑 我 · 超哥</span>
         </div>
         <div class="flight-body">
-            <div class="flight-icon">🛫</div>
-            <div class="flight-route">大阪伊丹机场 → 东京羽田机场</div>
-            <div class="flight-time">
-                <div class="time">12:50 → 14:10</div>
-                <div class="airport">ITM → HND</div>
+            <div class="flight-endpoint dep">
+                <div class="ep-time">12:50</div>
+                <div class="ep-airport">ITM 大阪伊丹机场</div>
+            </div>
+            <div class="flight-arrow">→</div>
+            <div class="flight-endpoint arr">
+                <div class="ep-time">14:10</div>
+                <div class="ep-airport">HND 东京羽田机场</div>
             </div>
         </div>
     </div>
@@ -603,11 +616,14 @@
             <span class="flight-people">🧑‍🤝‍🧑 我 · 超哥</span>
         </div>
         <div class="flight-body">
-            <div class="flight-icon">🛬</div>
-            <div class="flight-route">东京成田机场 → 香港国际机场</div>
-            <div class="flight-time">
-                <div class="time">15:45 → 19:40</div>
-                <div class="airport">NRT → HKG</div>
+            <div class="flight-endpoint dep">
+                <div class="ep-time">15:45</div>
+                <div class="ep-airport">NRT 东京成田机场</div>
+            </div>
+            <div class="flight-arrow">→</div>
+            <div class="flight-endpoint arr">
+                <div class="ep-time">19:40</div>
+                <div class="ep-airport">HKG 香港国际机场</div>
             </div>
         </div>
     </div>
@@ -645,11 +661,14 @@
                                 <span class="flight-people">👥 一行五人同行</span>
                             </div>
                             <div class="flight-body">
-                                <div class="flight-icon">🛫</div>
-                                <div class="flight-route">香港国际机场 → 关西国际机场</div>
-                                <div class="flight-time">
-                                    <div class="time">14:55 → 19:40</div>
-                                    <div class="airport">HKG → KIX</div>
+                                <div class="flight-endpoint dep">
+                                    <div class="ep-time">14:55</div>
+                                    <div class="ep-airport">HKG 香港国际机场</div>
+                                </div>
+                                <div class="flight-arrow">→</div>
+                                <div class="flight-endpoint arr">
+                                    <div class="ep-time">19:40</div>
+                                    <div class="ep-airport">KIX 关西国际机场</div>
                                 </div>
                             </div>
                         </div>
@@ -790,14 +809,55 @@
     <!-- Day 4 -->
     <div class="day-panel" data-day="4">
         <div class="card">
-            <h3 style="margin-bottom: 16px; font-size: 1.15em;">8月19日 · 🦌 奈良 → 大阪</h3>
+            <h3 style="margin-bottom: 16px; font-size: 1.15em;">8月19日 · 🦌 奈良观光 → 大阪</h3>
             <div class="timeline">
                 <div class="tl-item">
-                    <div class="tl-dot sight">📸</div>
+                    <div class="tl-dot transport">🚌</div>
+                    <div class="tl-content">
+                        <div class="tl-time">早上</div>
+                        <h4>🚌 从民宿出发，乘坐巴士前往奈良国立博物馆</h4>
+                        <div class="tl-desc">从奈良民宿步行至巴士站，乘车到达奈良国立博物馆附近</div>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=奈良国立博物館" target="_blank" class="action-btn map-link">📍 奈良国立博物馆</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot sight">🚶</div>
                     <div class="tl-content">
                         <div class="tl-time">上午</div>
-                        <h4>📸 奈良观光</h4>
-                        <div class="tl-desc">东大寺、春日大社、奈良公园</div>
+                        <h4>🚶 从博物馆步行前往春日大社</h4>
+                        <div class="tl-desc">沿参道漫步，沿途可见石灯笼和奈良小鹿</div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot sight">⛩️</div>
+                    <div class="tl-content">
+                        <div class="tl-time">上午</div>
+                        <h4>⛩️ 春日大社</h4>
+                        <div class="tl-desc">世界文化遗产，始建于768年，以参道两侧的石灯笼和吊灯笼闻名，是奈良最具代表性的神社之一</div>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=春日大社" target="_blank" class="action-btn map-link">📍 春日大社</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot sight">🦌</div>
+                    <div class="tl-content">
+                        <div class="tl-time">上午</div>
+                        <h4>🦌 奈良公园 & 东大寺</h4>
+                        <div class="tl-desc">从春日大社步行至奈良公园，与小鹿互动；参观东大寺大佛殿——世界最大的木造建筑，内有高15米的大佛像</div>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=東大寺" target="_blank" class="action-btn map-link">📍 东大寺</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot food">🍜</div>
+                    <div class="tl-content">
+                        <div class="tl-time">午餐</div>
+                        <h4>🍜 返回市区吃午餐</h4>
+                        <div class="tl-desc">结束奈良观光，返回近铁奈良站附近享用午餐</div>
                     </div>
                 </div>
                 <div class="tl-item">
@@ -878,42 +938,81 @@
     <!-- Day 6 -->
     <div class="day-panel" data-day="6">
         <div class="card">
-            <h3 style="margin-bottom: 16px; font-size: 1.15em;">8月21日 · 🏙️ 大阪观光</h3>
+            <h3 style="margin-bottom: 16px; font-size: 1.15em;">8月21日 · 🛍️ 大阪观光购物</h3>
             <div class="timeline">
                 <div class="tl-item">
-                    <div class="tl-dot sight">🏯</div>
+                    <div class="tl-dot transport">🚃</div>
                     <div class="tl-content">
                         <div class="tl-time">上午</div>
-                        <h4>🏯 大阪城</h4>
-                    </div>
-                </div>
-                <div class="tl-item">
-                    <div class="tl-dot sight">🗼</div>
-                    <div class="tl-content">
-                        <div class="tl-time">上午 — 中午</div>
-                        <h4>🗼 通天阁</h4>
-                    </div>
-                </div>
-                <div class="tl-item">
-                    <div class="tl-dot food">🐙</div>
-                    <div class="tl-content">
-                        <div class="tl-time">午餐</div>
-                        <h4>🐙 品尝关西美食</h4>
-                        <div class="tl-desc">大阪烧、章鱼烧、串炸</div>
+                        <h4>🚃 从民宿出发前往梅田</h4>
+                        <div class="tl-desc">乘坐地铁前往梅田商圈</div>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=大阪梅田駅" target="_blank" class="action-btn map-link">📍 梅田站</a>
+                        </div>
                     </div>
                 </div>
                 <div class="tl-item">
                     <div class="tl-dot sight">🛍️</div>
                     <div class="tl-content">
-                        <div class="tl-time">下午 — 晚上</div>
-                        <h4>🛍️ 道顿堀 · 心斋桥 · 黑门市场</h4>
+                        <div class="tl-time">上午 — 中午</div>
+                        <h4>🛍️ 梅田商圈观光购物</h4>
+                        <div class="tl-desc">大阪最大的商业中心之一，可逛阪急百货、HEP FIVE、Grand Front Osaka 等</div>
                     </div>
                 </div>
                 <div class="tl-item">
-                    <div class="tl-dot transport">🚃</div>
+                    <div class="tl-dot food">🍜</div>
                     <div class="tl-content">
-                        <div class="tl-time">晚上</div>
-                        <h4>🚃 返回大阪民宿</h4>
+                        <div class="tl-time">午餐</div>
+                        <h4>🍜 梅田商圈午餐</h4>
+                        <div class="tl-desc">在梅田百货地下美食街或周边餐厅享用午餐</div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot transport">🚇</div>
+                    <div class="tl-content">
+                        <div class="tl-time">午饭后</div>
+                        <h4>🚇 乘坐地铁前往难波站</h4>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=大阪難波駅" target="_blank" class="action-btn map-link">📍 难波站</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot sight">📸</div>
+                    <div class="tl-content">
+                        <div class="tl-time">下午</div>
+                        <h4>📸 打卡道顿堀</h4>
+                        <div class="tl-desc">大阪最热闹的美食娱乐街，打卡格力高跑步人标志霓虹牌，感受大阪的市井活力</div>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=道頓堀" target="_blank" class="action-btn map-link">📍 道顿堀</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot sight">🛍️</div>
+                    <div class="tl-content">
+                        <div class="tl-time">下午</div>
+                        <h4>🛍️ 难波站周边逛街</h4>
+                        <div class="tl-desc">难波 CITY、难波 Parks、心斋桥筋商店街等，尽情购物</div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot food">🥩</div>
+                    <div class="tl-content">
+                        <div class="tl-time">晚餐</div>
+                        <h4>🥩 黑门市场晚餐</h4>
+                        <div class="tl-desc">「大阪的厨房」，品尝新鲜海鲜、烤肉、关东煮等各式美食</div>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=黒門市場" target="_blank" class="action-btn map-link">📍 黑门市场</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-dot stay">🏠</div>
+                    <div class="tl-content">
+                        <div class="tl-time">晚饭后</div>
+                        <h4>🏠 返回民宿休息</h4>
+                        <div class="tl-desc">黑门市场距民宿步行可达，散步回住所</div>
                         <div class="action-btns">
                             <button class="action-btn copy-btn" onclick="copyText(this, '大阪市中央区高津3-12-17 542-0072')">📋 复制地址</button>
                         </div>
@@ -940,11 +1039,14 @@
                                 <span class="flight-people">👨‍👩‍👧 爸爸 · 妈妈 · 妹妹</span>
                             </div>
                             <div class="flight-body">
-                                <div class="flight-icon">🛬</div>
-                                <div class="flight-route">关西国际机场 → 香港国际机场</div>
-                                <div class="flight-time">
-                                    <div class="time">12:45 → 15:55</div>
-                                    <div class="airport">KIX → HKG</div>
+                                <div class="flight-endpoint dep">
+                                    <div class="ep-time">12:45</div>
+                                    <div class="ep-airport">KIX 关西国际机场</div>
+                                </div>
+                                <div class="flight-arrow">→</div>
+                                <div class="flight-endpoint arr">
+                                    <div class="ep-time">15:55</div>
+                                    <div class="ep-airport">HKG 香港国际机场</div>
                                 </div>
                             </div>
                         </div>
@@ -962,11 +1064,14 @@
                                 <span class="flight-people">🧑‍🤝‍🧑 我 · 超哥</span>
                             </div>
                             <div class="flight-body">
-                                <div class="flight-icon">🛫</div>
-                                <div class="flight-route">大阪伊丹机场 → 东京羽田机场</div>
-                                <div class="flight-time">
-                                    <div class="time">12:50 → 14:10</div>
-                                    <div class="airport">ITM → HND</div>
+                                <div class="flight-endpoint dep">
+                                    <div class="ep-time">12:50</div>
+                                    <div class="ep-airport">ITM 大阪伊丹机场</div>
+                                </div>
+                                <div class="flight-arrow">→</div>
+                                <div class="flight-endpoint arr">
+                                    <div class="ep-time">14:10</div>
+                                    <div class="ep-airport">HND 东京羽田机场</div>
                                 </div>
                             </div>
                         </div>
@@ -990,42 +1095,39 @@
     <!-- Day 8 -->
     <div class="day-panel" data-day="8">
         <div class="card">
-            <h3 style="margin-bottom: 16px; font-size: 1.15em;">8月23日 · 🗼 东京观光</h3>
+            <h3 style="margin-bottom: 16px; font-size: 1.15em;">8月23日 · 🛍️ 涩谷购物 · 准备富士山物资</h3>
             <div class="timeline">
                 <div class="tl-item">
-                    <div class="tl-dot sight">🐕</div>
+                    <div class="tl-dot sight">🛍️</div>
                     <div class="tl-content">
-                        <div class="tl-time">上午</div>
-                        <h4>🐕 涩谷十字路口 & 忠犬八公像</h4>
+                        <div class="tl-time">上午 — 下午</div>
+                        <h4>🛍️ 涩谷购物</h4>
+                        <div class="tl-desc">涩谷 109、Shibuya Scramble Square、MEGA Don Quijote 等，尽情购物</div>
+                        <div class="action-btns">
+                            <a href="https://www.google.com/maps/search/?api=1&query=渋谷駅" target="_blank" class="action-btn map-link">📍 涩谷站</a>
+                        </div>
                     </div>
                 </div>
                 <div class="tl-item">
-                    <div class="tl-dot sight">⛩️</div>
-                    <div class="tl-content">
-                        <div class="tl-time">上午 — 中午</div>
-                        <h4>⛩️ 明治神宫 & 竹下通</h4>
-                    </div>
-                </div>
-                <div class="tl-item">
-                    <div class="tl-dot sight">🗼</div>
+                    <div class="tl-dot transport">🛒</div>
                     <div class="tl-content">
                         <div class="tl-time">下午</div>
-                        <h4>🗼 东京塔 / 晴空塔</h4>
+                        <h4>🛒 采购富士山登山物资</h4>
+                        <div class="tl-desc">
+                            在涩谷周边药妆店和户外用品店采购：<br>
+                            • 保暖衣物（山顶气温接近 0°C）<br>
+                            • 雨具、头灯、登山杖<br>
+                            • 高热量零食、饮用水<br>
+                            • 创可贴、暖宝宝等应急物品
+                        </div>
                     </div>
                 </div>
                 <div class="tl-item">
-                    <div class="tl-dot sight">🤖</div>
+                    <div class="tl-dot stay">🏠</div>
                     <div class="tl-content">
-                        <div class="tl-time">下午 — 傍晚</div>
-                        <h4>🤖 台场</h4>
-                        <div class="tl-desc">高达独角兽、teamLab</div>
-                    </div>
-                </div>
-                <div class="tl-item">
-                    <div class="tl-dot food">🍜</div>
-                    <div class="tl-content">
-                        <div class="tl-time">晚上</div>
-                        <h4>🍜 新宿或银座晚餐</h4>
+                        <div class="tl-time">傍晚</div>
+                        <h4>🏠 返回住处，整理行装早点休息</h4>
+                        <div class="tl-desc">次日凌晨出发登富士山，建议早睡养精蓄锐</div>
                     </div>
                 </div>
             </div>
@@ -1115,11 +1217,14 @@
                                 <span class="flight-people">🧑‍🤝‍🧑 我 · 超哥</span>
                             </div>
                             <div class="flight-body">
-                                <div class="flight-icon">🛬</div>
-                                <div class="flight-route">东京成田机场 → 香港国际机场</div>
-                                <div class="flight-time">
-                                    <div class="time">15:45 → 19:40</div>
-                                    <div class="airport">NRT → HKG</div>
+                                <div class="flight-endpoint dep">
+                                    <div class="ep-time">15:45</div>
+                                    <div class="ep-airport">NRT 东京成田机场</div>
+                                </div>
+                                <div class="flight-arrow">→</div>
+                                <div class="flight-endpoint arr">
+                                    <div class="ep-time">19:40</div>
+                                    <div class="ep-airport">HKG 香港国际机场</div>
                                 </div>
                             </div>
                         </div>
